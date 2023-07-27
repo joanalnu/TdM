@@ -16,8 +16,7 @@ And if you are wondering what the name "TdM" means, it stays for "Tablas de Mult
 
 *Coming next: an update for using negative numbers and divisions.
 
-
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ¡Hola usuario!
 Este es el documento README para el programa "3_release_TdM_final.py".
@@ -37,8 +36,7 @@ Por cierto, si te preguntas que significan las letras "TdM", son las siglas para
 
 *En un futuro habrá una actualización para usar números negativos y divisiones.
 
-
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Hola usuari!
 Aquest és el document README per a el programa "3_release_TdM_final.py".
