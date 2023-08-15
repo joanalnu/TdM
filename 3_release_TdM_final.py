@@ -6,16 +6,16 @@ from time import sleep
 #i_problem (input problem)
 def i_problem(language):
     if language == 0:
-        print("A problem has ocurred, the program will restart in 10 seconds")
+        print("A problem has ocurred, the program will restart in 5 seconds")
     elif language == 1:
-        print("Ha habido un problema, el programa se reiniciará en 10 segundos")
+        print("Ha habido un problema, el programa se reiniciará en 5 segundos")
     elif language == 2:
-        print("Hi ha hagut un problema, el programa es reiniciarà en 10 segons")
+        print("Hi ha hagut un problema, el programa es reiniciarà en 5 segons")
     else:
-        print("There's a problem with the language selection. The program will restart in 10 seconds. If the problem persists contact me: 'joanalnu5@gmail.com'")
+        print("There's a problem with the language selection. The program will restart in 5 seconds. If the problem persists contact me: 'joanalnu5@gmail.com'")
     print("")
-    sleep(10)
-    language_choice()
+    sleep(5)
+    main()
 
 #language choice
 def language_choice():
@@ -34,19 +34,16 @@ def language_choice():
 #welcome + notes
 def welcome(language):
     if language == 0:
-        print("Hello, I'm your mental calculation trainer. Here you can practise to get better in mathematics.")
-        print("Follow the steps and it will all work correctly.")
-        print("If you want to stop at any moment, type '0' and press enter.")
+        print("Hello, I'm your mental calculation trainer.")
+        print("If you want to stop at any moment, type 'q' and press enter.")
         print("If you have any problems or you want to comment or suggest something, contact me at 'joanalnu5@gmail.com', thank you.")
     elif language == 1:
-        print("Hola, soy tu entrenador de cálculo mental. Aquí puedes practicar para ser mejor en matemáticas.")
-        print("Sigue los pasos y todo funcionará automáticamente.")
-        print("Si en algún momento quieres parar, teclea '0' y presiona enter.")
+        print("Hola, soy tu entrenador de cálculo mental.")
+        print("Si en algún momento quieres parar, teclea 'q' y presiona enter.")
         print("Si tienes algún problema o quieres hacer una sugerencia o comentario, contáctame en 'joanalnu5@gmail.com', gracias.")
     elif language == 2:
-        print("Hola, soc el teu entrenador de càlcul mental. Aquí pots practicar per ser millor en matemàtiques.")
-        print("Segueix els passos i tot funcionarà automàticament.")
-        print("Si en algun moment vols parar, tecleja '0' i pressiona enter.")
+        print("Hola, soc el teu entrenador de càlcul mental.")
+        print("Si en algun moment vols parar, tecleja 'q' i pressiona enter.")
         print("Si tens cap problema o vols fer una suggerencia o comentari, contacta'm a 'joanalnu5@gmail.com', gràcies.")
     else:
         i_problem(language)
@@ -68,7 +65,7 @@ def goodbye(language, puntos, positive_points, negative_points):
         print("Moltes gràcies per jugar!!")
     else:
         i_problem(language)
-    sleep(5)
+    sleep(2)
 
 #FUTURE modes election
 def modes_election(language):
@@ -111,6 +108,8 @@ def type_calc_election(language):
             return 1
         elif calc_election == "*":
             return 2
+        elif calc_election == '/' or calc_election=='÷':
+            return 3
         else:
             i_problem(language)
     elif language == 1:
@@ -121,6 +120,8 @@ def type_calc_election(language):
             return 1
         elif calc_election == "*":
             return 2
+        elif calc_election == '/' or calc_election=='÷':
+            return 3
         else:
             i_problem(language)
     elif language == 2:
@@ -131,6 +132,8 @@ def type_calc_election(language):
             return 1
         elif calc_election == "*":
             return 2
+        elif calc_election == '/' or calc_election=='÷':
+            return 3
         else:
             i_problem(language)
     else:
@@ -278,47 +281,73 @@ def training(language, low, high, calc, puntos, positive_points, negative_points
     if(calc==0):
         print(n1, '+', n2)
         ans = n1+n2
-        player_ans = int(input())
-        if(player_ans==0):
+        player_ans = input()
+        if(player_ans=='q'):
             goodbye(language, puntos, positive_points, negative_points)
-        elif(player_ans==ans):
-            puntos = puntos+1
-            positive_points = positive_points + 1
-            correct_answer(language, puntos)
-            training(language, low, high, calc, puntos, positive_points, negative_points)
         else:
-            negative_points = negative_points + 1
-            incorrect_answer(language, puntos)
-            training(language, low, high, calc, puntos, positive_points, negative_points)
+            player_ans = int(player_ans)
+            if(player_ans==ans):
+                puntos = puntos+1
+                positive_points = positive_points + 1
+                correct_answer(language, puntos)
+                training(language, low, high, calc, puntos, positive_points, negative_points)
+            else:
+                negative_points = negative_points + 1
+                incorrect_answer(language, puntos)
+                training(language, low, high, calc, puntos, positive_points, negative_points)
     elif(calc==1):
         print(n1, '-', n2)
         ans = n1-n2
-        player_ans = int(input())
-        if(player_ans==0):
+        player_ans = input()
+        if(player_ans=='q'):
             goodbye(language, puntos, positive_points, negative_points)
-        elif(player_ans==ans):
-            puntos = puntos+1
-            positive_points = positive_points + 1
-            correct_answer(language, puntos)
-            training(language, low, high, calc, puntos, positive_points, negative_points)
         else:
-            negative_points = negative_points + 1
-            incorrect_answer(language, puntos)
-            training(language, low, high, calc, puntos, positive_points, negative_points)
+            player_ans = int(player_ans)
+            if(player_ans==ans):
+                puntos = puntos+1
+                positive_points = positive_points + 1
+                correct_answer(language, puntos)
+                training(language, low, high, calc, puntos, positive_points, negative_points)
+            else:
+                negative_points = negative_points + 1
+                incorrect_answer(language, puntos)
+                training(language, low, high, calc, puntos, positive_points, negative_points)
     elif(calc==2):
         print(n1, '*', n2)
         ans = n1*n2
-        player_ans = int(input())
-        if(player_ans==0):
+        player_ans = input()
+        if(player_ans=='q'):
             goodbye(language, puntos, positive_points, negative_points)
-        elif(player_ans==ans):
-            puntos = puntos+1
-            positive_points = positive_points + 1
-            correct_answer(language, puntos)
-            training(language, low, high, calc, puntos, positive_points, negative_points)
         else:
-            negative_points = negative_points + 1
-            incorrect_answer(language, puntos)
+            player_ans = int(player_ans)
+            if(player_ans==ans):
+                puntos = puntos+1
+                positive_points = positive_points + 1
+                correct_answer(language, puntos)
+                training(language, low, high, calc, puntos, positive_points, negative_points)
+            else:
+                negative_points = negative_points + 1
+                incorrect_answer(language, puntos)
+                training(language, low, high, calc, puntos, positive_points, negative_points)
+    elif(calc==3):
+        if (n1/n2)%2 == 0:
+            print(n1, '/', n2)
+            ans = n1//n2 #integer division
+            player_ans = input()
+            if(player_ans=='q'):
+                goodbye(language, puntos, positive_points, negative_points)
+            else:
+                player_ans = int(player_ans)
+                if(player_ans==ans):
+                    puntos = puntos+1
+                    positive_points = positive_points+1
+                    correct_answer(language, puntos)
+                    training(language, low, high, calc, puntos, positive_points, negative_points)
+                else:
+                    negative_points = negative_points+1
+                    incorrect_answer(language, puntos)
+                    training(language, low, high, calc, puntos, positive_points, negative_points)
+        else:
             training(language, low, high, calc, puntos, positive_points, negative_points)
     else:
         i_problem(language)
@@ -350,63 +379,71 @@ def gaming(language, low, high, puntos, positive_points, negative_points):
     if calc==0:
         print(n1,'+',n2)
         ans=n1+n2
-        player_ans = int(input())
-        if player_ans == 0:
+        player_ans = input()
+        if player_ans == 'q':
             goodbye(language, puntos, positive_points, negative_points)
-        elif player_ans == ans:
-            puntos = puntos + 1
-            positive_points = positive_points + 1
-            correct_answer(language, puntos)
-            gaming(language, low, high, puntos, positive_points, negative_points)
         else:
-            puntos = puntos - 1
-            negative_points = negative_points + 1
-            incorrect_answer(language, puntos)
-            gaming(language, low, high, puntos, positive_points, negative_points)
+            player_ans = int(player_ans)
+            if player_ans == ans:
+                puntos = puntos + 1
+                positive_points = positive_points + 1
+                correct_answer(language, puntos)
+                gaming(language, low, high, puntos, positive_points, negative_points)
+            else:
+                puntos = puntos - 1
+                negative_points = negative_points + 1
+                incorrect_answer(language, puntos)
+                gaming(language, low, high, puntos, positive_points, negative_points)
     elif calc==1:
         print(n1,'-',n2)
         ans=n1-n2
-        player_ans = int(input())
-        if player_ans == 0:
+        player_ans = input()
+        if player_ans == 'q':
             goodbye(language, puntos, positive_points, negative_points)
-        elif player_ans == ans:
-            puntos = puntos + 1
-            positive_points = positive_points + 1
-            correct_answer(language, puntos)
-            gaming(language, low, high, puntos, positive_points, negative_points)
         else:
-            puntos = puntos - 1
-            negative_points = negative_points + 1
-            incorrect_answer(language, puntos)
-            gaming(language, low, high, puntos, positive_points, negative_points)
+            player_ans = int(player_ans)
+            if player_ans == ans:
+                puntos = puntos + 1
+                positive_points = positive_points + 1
+                correct_answer(language, puntos)
+                gaming(language, low, high, puntos, positive_points, negative_points)
+            else:
+                puntos = puntos - 1
+                negative_points = negative_points + 1
+                incorrect_answer(language, puntos)
+                gaming(language, low, high, puntos, positive_points, negative_points)
     elif calc==2:
         print(n1,'*',n2)
         ans=n1*n2
-        player_ans = int(input())
-        if player_ans == 0:
+        player_ans = input()
+        if player_ans == 'q':
             goodbye(language, puntos, positive_points, negative_points)
-        elif player_ans == ans:
-            puntos = puntos + 1
-            positive_points = positive_points + 1
-            correct_answer(language, puntos)
-            gaming(language, low, high, puntos, positive_points, negative_points)
         else:
-            puntos = puntos - 1
-            negative_points = negative_points + 1
-            incorrect_answer(language, puntos)
-            gaming(language, low, high, puntos, positive_points, negative_points)
+            player_ans = int(player_ans)
+            if player_ans == ans:
+                puntos = puntos + 1
+                positive_points = positive_points + 1
+                correct_answer(language, puntos)
+                gaming(language, low, high, puntos, positive_points, negative_points)
+            else:
+                puntos = puntos - 1
+                negative_points = negative_points + 1
+                incorrect_answer(language, puntos)
+                gaming(language, low, high, puntos, positive_points, negative_points)
     else:
         i_problem(language)
 
 
 
-#main code
-language = language_choice()
-welcome(language)
-mode = modes_election(language)
-if mode == 0:
-    training_setup(language)
-elif mode == 1:
-    gaming_setup(language)
-else:
-    i_problem(language)
+def main():
+    language = language_choice()
+    welcome(language)
+    mode = modes_election(language)
+    if mode == 0:
+        training_setup(language)
+    elif mode == 1:
+        gaming_setup(language)
+    else:
+        i_problem(language)
+
+main()
