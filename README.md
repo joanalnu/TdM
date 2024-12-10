@@ -2,7 +2,7 @@ Hello user!!
 This is the README file for the program: "3_release_TdM_final.py".
 
 Instructions:
-For using or running the file you need to have a python coding environment. You can download the official python IDLE in this link: python.org. Once installed, open the python IDLE and open the file (Ctrl+O, Cmd+O). Now you can click on "F5" and the game will start. If have any problems please contact me, 'joanalnu5@gmail.com'. Thank you for using this program, I hope you enjoy it.
+For using or running the file you need to have a python coding environment. You can download the official python IDLE in this link: python.org. Once installed, open the python IDLE and open the file (Ctrl+O, Cmd+O). Now you can click on "F5" and the game will start. If have any problems please contact me (see GitHub porfile). Thank you for using this program, I hope you enjoy it.
 
 
 Story:
@@ -20,7 +20,7 @@ And if you are wondering what the name "TdM" means, it stays for "Tablas de Mult
 Este es el documento README para el programa "3_release_TdM_final.py".
 
 Instrucciones:
-Para usar o correr el archivo necesita tener instalado un entorno de python. Puede descargar el IDLE official de python en el siguiente link: python.org. Una vez instalado, puede abrir el python IDLE y puede abrir el archivo (Ctrl+O, Cmd+O). Ahora puede clicar en "F5" y el juego empezará. Si tiene algún problema contácteme, 'joanalnu5@gmail.com'. Gracias por utilizar este programa, espero que lo disfrutes.
+Para usar o correr el archivo necesita tener instalado un entorno de python. Puede descargar el IDLE official de python en el siguiente link: python.org. Una vez instalado, puede abrir el python IDLE y puede abrir el archivo (Ctrl+O, Cmd+O). Ahora puede clicar en "F5" y el juego empezará. Si tiene algún problema contácteme (ver perfil de GitHub). Gracias por utilizar este programa, espero que lo disfrutes.
 
 
 Historia:
