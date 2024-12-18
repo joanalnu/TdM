@@ -1,0 +1,9 @@
+# os essentials
+.DS_Store
+
+# game
+game/__pycache__
+
+# testing
+.pytest_cache
+tests/__pycache__
