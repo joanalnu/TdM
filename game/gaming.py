@@ -1,5 +1,5 @@
 from random import randint
-from general import correct_answer, incorrect_answer
+from answers import correct_answer, incorrect_answer, goodbye
 
 # gaming mode
 def gaming(language, low, high, puntos, positive_points, negative_points):
