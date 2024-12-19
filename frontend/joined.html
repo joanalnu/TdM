@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Calculation Trainer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Calculation Trainer</h1>
+        <div id="language-selection">
+            <h2>Select Language</h2>
+            <select id="language">
+                <option value="0">English</option>
+                <option value="1">Español</option>
+                <option value="2">Català</option>
+            </select>
+            <button onclick="startGame()">Start</button>
+        </div>
+
+        <div id="game-area" style="display: none;">
+            <h2 id="welcome-message"></h2>
+            <div id="mode-selection">
+                <h3>Select Mode</h3>
+                <button onclick="selectMode(0)">Training Mode</button>
+                <button onclick="selectMode(1)">Gaming Mode</button>
+            </div>
+            <div id="calculation-area" style="display: none;">
+                <h3 id="calculation"></h3>
+                <input type="number" id="player-answer" placeholder="Your answer">
+                <button onclick="submitAnswer()">Submit</button>
+                <button onclick="quitGame()">Quit</button>
+            </div>
+            <div id="result-message"></div>
+        </div>
+    </div>
+    <script>
+        let language;
+        let mode;
+        let currentCalculation;
+        let correctAnswer;
+        let points = 0;
+
+        function startGame() {
+            language = document.getElementById("language").value;
+            document.getElementById("language-selection").style.display = "none";
+            document.getElementById("game-area").style.display = "block";
+            document.getElementById("welcome-message").innerText = getWelcomeMessage(language);
+        }
+
+        function getWelcomeMessage(lang) {
+            const messages = [
+                "Hello, I'm your mental calculation trainer.",
+                "Hola, soy tu entrenador de cálculo mental.",
+                "Hola, soc el teu entrenador de càlcul mental."
+            ];
+            return messages[lang];
+        }
+
+        function selectMode(selectedMode) {
+            mode = selectedMode;
+            if (mode === 0) {
+                // Training Mode
+                selectCalculationType();
+            } else {
+                // Gaming Mode
+                generateCalculation();
+            }
+        }
+
+        function selectCalculationType() {
+            // For simplicity, we will just generate a calculation
+            generateCalculation();
+        }
+
+        function generateCalculation() {
+            const n1 = Math.floor(Math.random() * 10);
+            const n2 = Math.floor(Math.random() * 10);
+            const operator = ['+', '-', '*'][Math.floor(Math.random() * 3)];
+            currentCalculation = `${n1} ${operator} ${n2}`;
+            correctAnswer = eval(currentCalculation);
+            document.getElementById("calculation").innerText = currentCalculation;
+            document.getElementById("calculation-area").style.display = "block";
+        }
+
+        function submitAnswer() {
+            const playerAnswer = parseInt(document.getElementById("player-answer").value);
+        if (playerAnswer === correctAnswer) {
+                points++;
+                document.getElementById("result-message").innerText = "Correct! Points: " + points;
+            } else {
+                document.getElementById("result-message").innerText = "Wrong! The correct answer was: " + correctAnswer;
+            }
+            document.getElementById("player-answer").value = '';
+            generateCalculation();
+        }
+
+        function quitGame() {
+            document.getElementById("game-area").style.display = "none";
+            document.getElementById("language-selection").style.display = "block";
+            points = 0;
+            document.getElementById("result-message").innerText = '';
+        }
+    </script>
+</body>
+</html>

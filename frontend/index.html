@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Calculation Trainer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Calculation Trainer</h1>
+        <div id="language-selection">
+            <h2>Select Language</h2>
+            <select id="language">
+                <option value="0">English</option>
+                <option value="1">Español</option>
+                <option value="2">Català</option>
+            </select>
+            <button onclick="startGame()">Start</button>
+        </div>
+
+        <div id="game-area" style="display: none;">
+            <h2 id="welcome-message"></h2>
+            <div id="mode-selection">
+                <h3>Select Mode</h3>
+                <button onclick="selectMode(0)">Training Mode</button>
+                <button onclick="selectMode(1)">Gaming Mode</button>
+            </div>
+            <div id="calculation-area" style="display: none;">
+                <h3 id="calculation"></h3>
+                <input type="number" id="player-answer" placeholder="Your answer">
+                <button onclick="submitAnswer()">Submit</button>
+                <button onclick="quitGame()">Quit</button>
+            </div>
+            <div id="result-message"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
