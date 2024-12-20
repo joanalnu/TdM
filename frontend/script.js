@@ -9,6 +9,13 @@ function startGame() {
     document.getElementById("language-selection").style.display = "none";
     document.getElementById("game-area").style.display = "block";
     document.getElementById("welcome-message").innerText = getWelcomeMessage(language);
+
+    // Add keydown listener to handle Enter key submission
+    document.getElementById("player-answer").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            submitAnswer();
+        }
+    });
 }
 
 function getWelcomeMessage(lang) {
@@ -48,7 +55,7 @@ function generateCalculation() {
 
 function submitAnswer() {
     const playerAnswer = parseInt(document.getElementById("player-answer").value);
- if (playerAnswer === correctAnswer) {
+    if (playerAnswer === correctAnswer) {
         points++;
         document.getElementById("result-message").innerText = "Correct! Points: " + points;
     } else {
