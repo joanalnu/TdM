@@ -23,7 +23,20 @@ function startGame() {
         "ja": "メンタル計算トレーナー",
         "ko": "멘탈 계산 트레이너"
     };
+    const footers = {
+        "en": "© 2024 All Rights Reserved | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instructions</a>",
+        "es": "© 2024 Todos los derechos reservados | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instrucciones</a>",
+        "ca": "© 2024 Tots els drets reservats | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instruccions</a>",
+        "de": "© 2024 Alle Rechte vorbehalten | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Anleitung</a>",
+        "fr": "© 2024 Tous droits réservés | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instructions</a>",
+        "it": "© 2024 Tutti i diritti riservati | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Istruzioni</a>",
+        "pt": "© 2024 Todos os direitos reservados | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instruções</a>",
+        "zh": "© 2024 版权所有 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>说明</a>",
+        "ja": "© 2024 すべての権利予約 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>説明</a>",
+        "ko": "© 2024 모든 권한 보유 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>설명</a>"
+    }
     document.getElementById("main-title").innerHTML = titles[language];
+    document.getElementById("footer").innerHTML = footers[language];
 
     document.getElementById("player-answer").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
@@ -198,6 +211,8 @@ function selectCalculationType(selectedCalc) {
     generateCalculation();
 }
 
+let previousCalculation;
+
 function generateCalculation() {
     let operator;
     if (mode === 0) { // Training Mode
@@ -206,18 +221,24 @@ function generateCalculation() {
         operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
     }
 
-    const n1 = Math.floor(Math.random() * 10);
-    const n2 = Math.floor(Math.random() * 10);
-    currentCalculation = `${n1} ${operator} ${n2}`;
+    let n1, n2;
+    do {
+        n1 = Math.floor(Math.random() * 10) + 1;
+        n2 = Math.floor(Math.random() * 10) + 1;
+        currentCalculation = `${n1} ${operator} ${n2}`;
+    } while (currentCalculation === previousCalculation);
+
     if (operator === '/') {
         while ((n1/n2)%10 != 0) {
-            n1 = Math.floor(Math.random() * 10);
-            n2 = Math.floor(Math.random() * 10)
+            n1 = Math.floor(Math.random() * 10) + 1;
+            n2 = Math.floor(Math.random() * 10) + 1;
         }
+        currentCalculation = `${n1} ${operator} ${n2}`;
     }
     correctAnswer = eval(currentCalculation); // Not recommended, but safe for simple calculations
     document.getElementById("calculation").innerHTML = currentCalculation;
     document.getElementById("calculation-area").style.display = "block";
+    previousCalculation = currentCalculation;
 }
 
 function submitAnswer() {
