@@ -125,9 +125,11 @@ function quitWelcomeMessage(language) {
     document.getElementById("mode-2-button").innerHTML = button2[language];
 }
 
-function modeSelection(selectedMode, language) {
+function modeSelection(selectedMode) {
     mode = selectedMode;
     if (mode === 1) {
+        document.getElementById("game-area").style.display = "block";
+        document.getElementById("mode-selection-title").innerHTML = mode;
         generateCalculation();
     }
     else if (mode === 0) {
@@ -207,10 +209,11 @@ function modeSelection(selectedMode, language) {
 function selectCalculationType(selectedCalc) {
     calc = selectedCalc;
     document.getElementById("calculation-selection").style.display = "none";
+    document.getElementById("game-area").style.display = "block";
     generateCalculation();
 }
 // low high selection missing
-function generateCalculation() {
+function generateCalculation(mode) {
     if (mode===0){
         const operator = calc;
     } else {
