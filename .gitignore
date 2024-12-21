@@ -1,9 +1,6 @@
 # os essentials
 .DS_Store
 
-# game
-game/__pycache__
-
-# testing
-.pytest_cache
-tests/__pycache__
+# pycache
+deprecatedIdeas/game/__pycache__
+deprecatedIdeas/tests/__pycache__
