@@ -41,7 +41,7 @@ function startGame() {
      // add enter button
     document.getElementById("player-answer").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-            submitAnswer();
+            submitAnswer(language);
         }
     });
 
@@ -127,88 +127,168 @@ function quitWelcomeMessage(language) {
 
 function modeSelection(selectedMode, language) {
     mode = selectedMode;
-    if (mode === 0) {
-        // Training Mode
-        document.getElementById("calculation-selection").style.display = "block";
-    }
-    else {
+    if (mode === 1) {
         generateCalculation();
     }
-    document.getElementById("mode-selection").style.display = "none"
+    else if (mode === 0) {
+        //Training Mde
+        document.getElementById("calculation-selection").style.display = "block";
     
-    // setting up next page
-    titles = {
-        "en": "Select Calculation Type",
-        "es": "Seleccione el tipo de cálculo",
-        "ca": "Seleccione el tipus de càlcul",
-        "de": "Wählen Sie den Rechentyp",
-        "fr": "Sélectionnez le type de calcul",
-        "it": "Selezionare il tipo di calcolo",
-        "pt": "Selecione o tipo de cálculo",
-        "zh": "选择计算类型",
-        "ja": "計算の種類を選択",
-        "ko": "계산의 종류를 선택하세요"
-    };
-    document.getElementById("mode-selection-title").innerHTML = titles[language];
-    button1 = {
-        "en": "Addition",
-        "es": "Suma",
-        "ca": "Suma",
-        "de": "Addition",
-        "fr": "Addition",
-        "it": "Addizione",
-        "pt": "Adição",
-        "zh": "加法",
-        "ja": "加算",
-        "ko": "더하기"
-    };
-    button2 = {
-        "en": "Subtraction",
-        "es": "Resta",
-        "ca": "Resta",
-        "de": "Subtraktion",
-        "fr": "Soustraction",
-        "it": "Sottrazione",
-        "pt": "Subtração",
-        "zh": "减法",
-        "ja": "減算",
-        "ko": "빼기"
-    };
-    button3 = {
-        "en": "Multiplication",
-        "es": "Multiplicación",
-        "ca": "Multiplicació",
-        "de": "Multiplikation",
-        "fr": "Multiplication",
-        "it": "Moltiplicazione",
-        "pt": "Multiplicação",
-        "zh": "乘法",
-        "ja": "乗算",
-        "ko": "곱하기"
+        // setting up next page
+        titles = {
+            "en": "Select Calculation Type",
+            "es": "Seleccione el tipo de cálculo",
+            "ca": "Seleccione el tipus de càlcul",
+            "de": "Wählen Sie den Rechentyp",
+            "fr": "Sélectionnez le type de calcul",
+            "it": "Selezionare il tipo di calcolo",
+            "pt": "Selecione o tipo de cálculo",
+            "zh": "选择计算类型",
+            "ja": "計算の種類を選択",
+            "ko": "계산의 종류를 선택하세요"
+        };
+        document.getElementById("mode-selection-title").innerHTML = titles[language];
+        button1 = {
+            "en": "Addition",
+            "es": "Suma",
+            "ca": "Suma",
+            "de": "Addition",
+            "fr": "Addition",
+            "it": "Addizione",
+            "pt": "Adição",
+            "zh": "加法",
+            "ja": "加算",
+            "ko": "더하기"
+        };
+        button2 = {
+            "en": "Subtraction",
+            "es": "Resta",
+            "ca": "Resta",
+            "de": "Subtraktion",
+            "fr": "Soustraction",
+            "it": "Sottrazione",
+            "pt": "Subtração",
+            "zh": "减法",
+            "ja": "減算",
+            "ko": "빼기"
+        };
+        button3 = {
+            "en": "Multiplication",
+            "es": "Multiplicación",
+            "ca": "Multiplicació",
+            "de": "Multiplikation",
+            "fr": "Multiplication",
+            "it": "Moltiplicazione",
+            "pt": "Multiplicação",
+            "zh": "乘法",
+            "ja": "乗算",
+            "ko": "곱하기"
+        }
+        button4 = {
+            "en": "Division",
+            "es": "División",
+            "ca": "Divisió",
+            "de": "Division",
+            "fr": "Division",
+            "it": "Divisione",
+            "pt": "Divisão",
+            "zh": "除法",
+            "ja": "除算",
+            "ko": "나누기"
+        };
+        document.getElementById("calc-1-button").innerHTML = button1[language];
+        document.getElementById("calc-2-button").innerHTML = button2[language];
+        document.getElementById("calc-3-button").innerHTML = button3[language];
+        document.getElementById("calc-4-button").innerHTML = button4[language];
     }
-    button4 = {
-        "en": "Division",
-        "es": "División",
-        "ca": "Divisió",
-        "de": "Division",
-        "fr": "Division",
-        "it": "Divisione",
-        "pt": "Divisão",
-        "zh": "除法",
-        "ja": "除算",
-        "ko": "나누기"
-    };
-    document.getElementById("calc-1-button").innerHTML = button1[language];
-    document.getElementById("calc-2-button").innerHTML = button2[language];
-    document.getElementById("calc-3-button").innerHTML = button3[language];
-    document.getElementById("calc-4-button").innerHTML = button4[language];
+    document.getElementById("mode-selection").style.display = "none"
 }
 
 function selectCalculationType(selectedCalc) {
     calc = selectedCalc;
     document.getElementById("calculation-selection").style.display = "none";
+    generateCalculation();
+}
+// low high selection missing
+function generateCalculation() {
+    if (mode===0){
+        const operator = calc;
+    } else {
+        const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+    }
+    const n1 = Math.floor(Math.random() * 10)
+    const n2 = Math.floor(Math.random() * 10)
+    currentCalculation = `${n1} ${operator} ${n2}`;
+    correctAnswer = eval(currentCalculation);
+    document.getElementById("calculation").innerHTML = currentCalculation;
+    document.getElementById("calculation-area").style.display = "block";
 }
 
-function generateCalculation() {
+function submitAnswer(language) {
+    const correctMessages = {
+        "en": "Correct! Points: ",
+        "es": "¡Correcto! Puntos: ",
+        "ca": "Correcte! Punts: ",
+        "de": "Richtig! Punkte: ",
+        "fr": "Correct! Points: ",
+        "it": "Corretto! Punti: ",
+        "pt": "Certo! Pontos: ",
+        "zh": "正确! 分数: ",
+        "ja": "正解! ポイント: ",
+        "ko": "정답! 점수: "
+    };
+    const incorrectMessages = {
+        "en": "Oh no! The correct answer was: ",
+        "es": "¡Oh no! La respuesta correcta era: ",
+        "ca": "Oh no! La resposta correcta era: ",
+        "de": "Oh nein! Die richtige Antwort war: ",
+        "fr": "Oh non! La bonne réponse était: ",
+        "it": "Oh no! La risposta corretta era: ",
+        "pt": "Oh não! A resposta correta era: ",
+        "zh": "哦不! 正确答案是: ",
+        "ja": "あれ！正解は: ",
+        "ko": "아니요! 정답은: "
+    };
+    const playerAnswer = parseInt(document.getElementById("player-answer").value);
+    if (playerAnswer === correctAnswer) {
+        points++;
+        document.getElementById("points").innerHTML = correctMessages(language) + points;
+    } else {
+        document.getElementById("points").innerHTML = incorrectMessages(language) + correctAnswer;
+    }
+    document.getElementById("player-answer").value = "";
+}
 
+function quitGame(language) {
+    document.getElementById("game-area").style.display = "none";
+    // document.getElementById("points").innerHTML = '';
+    document.getElementById("goodbye-section").style.display = "block"
+    goodbyeMessages = {
+        "en": "Thanks for playing! You scored: ",
+        "es": "¡Gracias por jugar! Has obtenido: ",
+        "ca": "Gràcies per jugar! Has obtingut: ",
+        "de": "Danke für das Spielen! Du hast: ",
+        "fr": "Merci de jouer! Vous avez obtenu: ",
+        "it": "Grazie per aver giocato! Avete ottenuto: ",
+        "pt": "Obrigado por jogar! Você obteve: ",
+        "zh": "谢谢玩! 得分: ",
+        "ja": "ありがとうございました! ポイント: ",
+        "ko": "감사합니다! 점수: "
+    };
+    pointsInDiffLanguages = {
+        "en": " points.",
+        "es": " puntos.",
+        "ca": " punts.",
+        "de": " Punkte.",
+        "fr": " points.",
+        "it": " punti.",
+        "pt": " pontos.",
+        "zh": " 分.",
+        "ja": " ポイント.",
+        "ko": " 점."
+    };
+    document.getElementById("goodbye-message").innerHTML = goodbyeMessages[language] + points + pointsInDiffLanguages[language];
+    setTimeout(function(){}, 5000);
+    points = 0;
+    document.getElementById("language-selection").style.display = "block"
 }
