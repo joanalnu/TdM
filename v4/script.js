@@ -209,6 +209,12 @@ function generateCalculation() {
     const n1 = Math.floor(Math.random() * 10);
     const n2 = Math.floor(Math.random() * 10);
     currentCalculation = `${n1} ${operator} ${n2}`;
+    if (operator === '/') {
+        while ((n1/n2)%10 != 0) {
+            n1 = Math.floor(Math.random() * 10);
+            n2 = Math.floor(Math.random() * 10)
+        }
+    }
     correctAnswer = eval(currentCalculation); // Not recommended, but safe for simple calculations
     document.getElementById("calculation").innerHTML = currentCalculation;
     document.getElementById("calculation-area").style.display = "block";
@@ -254,31 +260,6 @@ function submitAnswer() {
 
 function quitGame() {
     document.getElementById("game-area").style.display = "none";
-    document.getElementById("goodbye-section").style.display = "block";
-
-    const goodbyeMessages = {
-        "en": "Thanks for playing! You scored: ",
-        "es": "¡Gracias por jugar! Has obtenido: ",
-        "ca": "Gràcies per jugar! Has obtingut: ",
-        "de": "Danke fürs Spielen! Du hast erzielt: ",
-        "fr": "Merci d'avoir joué! Vous avez marqué : ",
-        "it": "Grazie per aver giocato! Hai ottenuto: ",
-        "pt": "Obrigado por jogar! Você marcou: ",
-        "zh": "感谢您的参与！您得分：",
-        "ja": "遊んでくれてありがとう！あなたのスコア：",
-        "ko": "게임에 참여해 주셔서 감사합니다! 당신의 점수는: "
-    };
-    document.getElementById("goodbye-message").innerHTML = `${goodbyeMessages[language]} ${points}`;
-    points = 0;
-    setTimeout(function(){}, 5000);
-    document.getElementById("goodbye-section").style.display = "none";
-    document.getElementById("language-selection").style.display = "block";
-}
-
-
-
-function quitGame() {
-    document.getElementById("game-area").style.display = "none";
     document.getElementById("result-message").innerText = '';
 
     const goodbyeMessages = {
@@ -313,7 +294,8 @@ function quitGame() {
     // Set a timeout to hide the section after 10 seconds
     setTimeout(function() {
         document.getElementById("goodbye-section").style.display = "none";
-    }, 10000);
+        document.getElementById("language-selection").style.display = "block";
+    }, 70000);
 
 
     // reset all variables
@@ -322,7 +304,5 @@ function quitGame() {
     currentCalculation = undefined;
     correctAnswer = undefined;
     points = 0;
-    calc = undefined;
-
-    document.getElementById("language-selection").style.display = "block";   
+    calc = undefined;   
 }
