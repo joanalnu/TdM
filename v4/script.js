@@ -6,24 +6,12 @@ let points = 0;
 let calc;
 
 function startGame() {
-    const languages = {
-        "English": "en",
-        "Spanish": "es",
-        "Catalan": "ca",
-        "German": "de",
-        "French": "fr",
-        "Italiano": "it",
-        "Português": "pt",
-        "Chinese": "zh",
-        "Japanese": "ja",
-        "Korean": "ko"
-    };
     language = document.getElementById("language").value; // define language
-    document.getElementById("language-selection").style.display = "none"; //quit the language menu
+    document.getElementById("language-selection").style.display = "none"; // hide the language menu
     document.getElementById("welcome").style.display = "block"; // display welcome section
-    
-    // change title it necessary
-    titles = {
+
+    // Change title based on selected language
+    const titles = {
         "en": "Mental Calculation Trainer",
         "es": "Entrenador de Cálculo Mental",
         "ca": "Entrenador de Càlcul Mental",
@@ -36,20 +24,19 @@ function startGame() {
         "ko": "멘탈 계산 트레이너"
     };
     document.getElementById("main-title").innerHTML = titles[language];
-    
 
-     // add enter button
-    document.getElementById("player-answer").addEventListener("keydown", function(event) {
+    document.getElementById("player-answer").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
+            event.preventDefault(); // Prevent default form submission
             submitAnswer();
         }
     });
 
-    getWelcomeMessage() // trigger welcome message
+    getWelcomeMessage(); // trigger welcome message
 }
 
 function getWelcomeMessage() {
-    continues = {
+    const continues = {
         "en": "Continue",
         "es": "Continuar",
         "ca": "Continuar",
@@ -62,6 +49,7 @@ function getWelcomeMessage() {
         "ko": "계속하기"
     };
     document.getElementById("continue-button").innerHTML = continues[language];
+
     const messages = {
         "en": "Hello, I'm your mental calculation trainer.",
         "es": "Hola, soy tu entrenador de cálculo mental.",
@@ -73,16 +61,15 @@ function getWelcomeMessage() {
         "zh": "你好，我是你的心算培训师。",
         "ja": "こんにちは、私はあなたのメンタル計算トレーナーです。",
         "ko": "안녕하세요, 저는 여러분의 멘탈 계산 트레이너입니다."
-    }
+    };
     document.getElementById("welcome-message").innerHTML = messages[language];
-    
 }
 
 function quitWelcomeMessage() {
     document.getElementById("welcome-section").style.display = "none";
     document.getElementById("mode-selection").style.display = "block";
 
-    messages = {
+    const modeSelectionTitle = {
         "en": "Select a Mode",
         "es": "Seleccione un Modo",
         "ca": "Seleccioni el Mode",
@@ -93,11 +80,11 @@ function quitWelcomeMessage() {
         "zh": "选择模式",
         "ja": "モード選択",
         "ko": "모드 선택",
-    }
-    document.getElementById("mode-selection-title").innerHTML = messages[language]
+    };
+    document.getElementById("mode-selection-title").innerHTML = modeSelectionTitle[language];
 
-    // change mode selection button title according to language
-    button1 = {
+    // Set button titles for the modes
+    const button1 = {
         "en": "Training Mode",
         "es": "Modo de Entrenamiento",
         "ca": "Mode d'Entrenament",
@@ -108,8 +95,8 @@ function quitWelcomeMessage() {
         "zh": "培训模式",
         "ja": "トレーニングモード",
         "ko": "교육 모드"
-    }
-    button2 = {
+    };
+    const button2 = {
         "en": "Gaming Mode",
         "es": "Modo de Juego",
         "ca": "Mode de Joc",
@@ -120,7 +107,7 @@ function quitWelcomeMessage() {
         "zh": "游戏模式",
         "ja": "ゲーミング・モード",
         "ko": "게임 모드"
-    }
+    };
     document.getElementById("mode-1-button").innerHTML = button1[language];
     document.getElementById("mode-2-button").innerHTML = button2[language];
 }
@@ -130,13 +117,10 @@ function modeSelection(selectedMode) {
     if (mode === 1) {
         document.getElementById("game-area").style.display = "block";
         generateCalculation();
-    }
-    else if (mode === 0) {
-        //Training Mode
+    } else if (mode === 0) {
+        // Training Mode
         document.getElementById("calculation-selection").style.display = "block";
-    
-        // setting up next page
-        titles = {
+        const modeSelectionTitle = {
             "en": "Select Calculation Type",
             "es": "Seleccione el tipo de cálculo",
             "ca": "Seleccione el tipus de càlcul",
@@ -148,8 +132,10 @@ function modeSelection(selectedMode) {
             "ja": "計算の種類を選択",
             "ko": "계산의 종류를 선택하세요"
         };
-        document.getElementById("mode-selection-title").innerHTML = titles[language];
-        button1 = {
+        document.getElementById("mode-selection-title").innerHTML = modeSelectionTitle[language];
+
+        // Calculation buttons
+        const button1 = {
             "en": "Addition",
             "es": "Suma",
             "ca": "Suma",
@@ -161,7 +147,7 @@ function modeSelection(selectedMode) {
             "ja": "加算",
             "ko": "더하기"
         };
-        button2 = {
+        const button2 = {
             "en": "Subtraction",
             "es": "Resta",
             "ca": "Resta",
@@ -173,7 +159,7 @@ function modeSelection(selectedMode) {
             "ja": "減算",
             "ko": "빼기"
         };
-        button3 = {
+        const button3 = {
             "en": "Multiplication",
             "es": "Multiplicación",
             "ca": "Multiplicació",
@@ -184,8 +170,8 @@ function modeSelection(selectedMode) {
             "zh": "乘法",
             "ja": "乗算",
             "ko": "곱하기"
-        }
-        button4 = {
+        };
+        const button4 = {
             "en": "Division",
             "es": "División",
             "ca": "Divisió",
@@ -202,7 +188,7 @@ function modeSelection(selectedMode) {
         document.getElementById("calc-3-button").innerHTML = button3[language];
         document.getElementById("calc-4-button").innerHTML = button4[language];
     }
-    document.getElementById("mode-selection").style.display = "none"
+    document.getElementById("mode-selection").style.display = "none";
 }
 
 function selectCalculationType(selectedCalc) {
@@ -211,21 +197,19 @@ function selectCalculationType(selectedCalc) {
     document.getElementById("game-area").style.display = "block";
     generateCalculation();
 }
-// low high selection missing
+
 function generateCalculation() {
-    if (mode===0){
-        console.log("Generating calculation with training mode...");
-        const operator = calc;
-    } else {
-        console.log("Generating random operator for gaming mode");
-        const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+    let operator;
+    if (mode === 0) { // Training Mode
+        operator = calc === 0 ? "+" : calc === 1 ? "-" : calc === 2 ? "*" : "/";
+    } else { // Gaming Mode
+        operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
     }
-    const n1 = Math.floor(Math.random() * 10)
-    const n2 = Math.floor(Math.random() * 10)
-    console.log("Number are generated");
+
+    const n1 = Math.floor(Math.random() * 10);
+    const n2 = Math.floor(Math.random() * 10);
     currentCalculation = `${n1} ${operator} ${n2}`;
-    correctAnswer = eval(currentCalculation);
-    console.log("Displaying information");
+    correctAnswer = eval(currentCalculation); // Not recommended, but safe for simple calculations
     document.getElementById("calculation").innerHTML = currentCalculation;
     document.getElementById("calculation-area").style.display = "block";
 }
@@ -235,52 +219,81 @@ function submitAnswer() {
         "en": "Correct! Points: ",
         "es": "¡Correcto! Puntos: ",
         "ca": "Correcte! Punts: ",
-        "de": "Richtig! Punkte: ",
+        "de": "Korrekt! Punkte: ",
         "fr": "Correct! Points: ",
         "it": "Corretto! Punti: ",
-        "pt": "Certo! Pontos: ",
-        "zh": "正确! 分数: ",
-        "ja": "正解! ポイント: ",
-        "ko": "정답! 점수: "
+        "pt": "Correto! Pontos: ",
+        "zh": "正确！分数：",
+        "ja": "正解！ポイント：",
+        "ko": "정답! 포인트: "
     };
+
     const incorrectMessages = {
         "en": "Oh no! The correct answer was: ",
         "es": "¡Oh no! La respuesta correcta era: ",
         "ca": "Oh no! La resposta correcta era: ",
         "de": "Oh nein! Die richtige Antwort war: ",
-        "fr": "Oh non! La bonne réponse était: ",
-        "it": "Oh no! La risposta corretta era: ",
+        "fr": "Oh non! La bonne réponse était : ",
+        "it": "Oh no! La risposta giusta era: ",
         "pt": "Oh não! A resposta correta era: ",
-        "zh": "哦不! 正确答案是: ",
-        "ja": "あれ！正解は: ",
-        "ko": "아니요! 정답은: "
+        "zh": "哦不！正确答案是：",
+        "ja": "ああ！正しい答えは：",
+        "ko": "오! 정답은: "
     };
+
     const playerAnswer = parseInt(document.getElementById("player-answer").value);
     if (playerAnswer === correctAnswer) {
         points++;
-        document.getElementById("points").innerHTML = correctMessages() + points;
+        document.getElementById("result-message").innerText = correctMessages[language] + points;
     } else {
-        document.getElementById("points").innerHTML = incorrectMessages() + correctAnswer;
+        document.getElementById("result-message").innerText = incorrectMessages[language] + correctAnswer;
     }
-    document.getElementById("player-answer").value = "";
+    document.getElementById("player-answer").value = '';
+    generateCalculation();
 }
 
 function quitGame() {
     document.getElementById("game-area").style.display = "none";
-    // document.getElementById("points").innerHTML = '';
-    document.getElementById("goodbye-section").style.display = "block"
-    goodbyeMessages = {
+    document.getElementById("goodbye-section").style.display = "block";
+
+    const goodbyeMessages = {
         "en": "Thanks for playing! You scored: ",
         "es": "¡Gracias por jugar! Has obtenido: ",
         "ca": "Gràcies per jugar! Has obtingut: ",
-        "de": "Danke für das Spielen! Du hast: ",
-        "fr": "Merci de jouer! Vous avez obtenu: ",
-        "it": "Grazie per aver giocato! Avete ottenuto: ",
-        "pt": "Obrigado por jogar! Você obteve: ",
-        "zh": "谢谢玩! 得分: ",
-        "ja": "ありがとうございました! ポイント: ",
-        "ko": "감사합니다! 점수: "
+        "de": "Danke fürs Spielen! Du hast erzielt: ",
+        "fr": "Merci d'avoir joué! Vous avez marqué : ",
+        "it": "Grazie per aver giocato! Hai ottenuto: ",
+        "pt": "Obrigado por jogar! Você marcou: ",
+        "zh": "感谢您的参与！您得分：",
+        "ja": "遊んでくれてありがとう！あなたのスコア：",
+        "ko": "게임에 참여해 주셔서 감사합니다! 당신의 점수는: "
     };
+    document.getElementById("goodbye-message").innerHTML = `${goodbyeMessages[language]} ${points}`;
+    points = 0;
+    setTimeout(function(){}, 5000);
+    document.getElementById("goodbye-section").style.display = "none";
+    document.getElementById("language-selection").style.display = "block";
+}
+
+
+
+function quitGame() {
+    document.getElementById("game-area").style.display = "none";
+    document.getElementById("result-message").innerText = '';
+
+    const goodbyeMessages = {
+        "en": "Thanks for playing! You scored: ",
+        "es": "¡Gracias por jugar! Has obtenido: ",
+        "ca": "Gràcies per jugar! Has obtingut: ",
+        "de": "Danke fürs Spielen! Du hast erzielt: ",
+        "fr": "Merci d'avoir joué! Vous avez marqué : ",
+        "it": "Grazie per aver giocato! Hai ottenuto: ",
+        "pt": "Obrigado por jogar! Você marcou: ",
+        "zh": "感谢您的参与！您得分：",
+        "ja": "遊んでくれてありがとう！あなたのスコア：",
+        "ko": "게임에 참여해 주셔서 감사합니다! 당신의 점수는: "
+    };
+
     pointsInDiffLanguages = {
         "en": " points.",
         "es": " puntos.",
@@ -290,11 +303,26 @@ function quitGame() {
         "it": " punti.",
         "pt": " pontos.",
         "zh": " 分.",
-        "ja": " ポイント.",
+        "ja": " 点.",
         "ko": " 점."
-    };
+    }
+    
+    document.getElementById("goodbye-section").style.display = "block";
     document.getElementById("goodbye-message").innerHTML = goodbyeMessages[language] + points + pointsInDiffLanguages[language];
-    setTimeout(function(){}, 5000);
+
+    // Set a timeout to hide the section after 10 seconds
+    setTimeout(function() {
+        document.getElementById("goodbye-section").style.display = "none";
+    }, 10000);
+
+
+    // reset all variables
+    language = undefined;
+    mode = undefined;
+    currentCalculation = undefined;
+    correctAnswer = undefined;
     points = 0;
-    document.getElementById("language-selection").style.display = "block"
+    calc = undefined;
+
+    document.getElementById("language-selection").style.display = "block";   
 }
