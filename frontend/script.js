@@ -36,6 +36,7 @@ function selectMode(selectedMode) {
         // Gaming Mode
         generateCalculation();
     }
+    document.getElementById("mode-selection").style.display = "none";
 }
 
 function selectCalculationType() {

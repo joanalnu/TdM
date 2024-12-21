@@ -4,156 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Calculation Trainer</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background: linear-gradient(to bottom, #ffffff, #e6f7ff);
-            color: #333;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background-color: #1a73e8;
-            color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .title {
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-        }
-
-        .login-btn {
-            padding: 10px 15px;
-            border: none;
-            background: #fff;
-            color: #1a73e8;
-            font-weight: bold;
-            border-radius: 25px;
-            transition: all 0.3s ease-in-out;
-            cursor: pointer;
-        }
-
-        .login-btn:hover {
-            background: #e6f7ff;
-            transform: scale(1.1);
-        }
-
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 80px);
-            text-align: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 600px;
-        }
-
-        h1, h2, h3 {
-            color: #1a73e8;
-            margin-bottom: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .primary-btn {
-            background-color: #4caf50;
-            color: white;
-        }
-
-        .primary-btn:hover {
-            background-color: #45a049;
-            transform: scale(1.1);
-        }
-
-        .secondary-btn {
-            background-color: #ff5722;
-            color: white;
-        }
-
-        .secondary-btn:hover {
-            background-color: #e64a19;
-            transform: scale(1.1);
-        }
-
-        .mode-btn {
-            margin: 10px;
-            background-color: #1a73e8;
-            color: white;
-            font-weight: bold;
-            padding: 15px 30px;
-        }
-
-        .mode-btn:hover {
-            background-color: #1665c1;
-            transform: scale(1.1);
-        }
-
-        input {
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 80%;
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #1a73e8;
-            color: #fff;
-            font-size: 0.9rem;
-            margin-top: 20px;
-        }
-
-        footer a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="logo">LOGO</div>
-        <div class="title">Mental Calculation Trainer</div>
+        <div id="main-title" class="title">Mental Calculation Trainer</div>
         <button class="login-btn">Log In</button>
     </header>
     <main>
@@ -162,11 +18,38 @@
             <div id="language-selection" class="section">
                 <h1>Select Language</h1>
                 <select id="language">
-                    <option value="0">English</option>
-                    <option value="1">Español</option>
-                    <option value="2">Català</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ca">Català</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italiano</option>
+                    <option value="pt">Português</option>
+                    <option value="zh">中文</option>
+                    <option value="ja">日语</option>
+                    <option value="ko">한국어</option>
                 </select>
                 <button class="primary-btn" onclick="startGame()">Start</button>
+            </div>
+
+            <!-- Welcome & selection area -->
+            <div id="welcome" class="section" style="display: none">
+                <div id="welcome-section">
+                    <h2 id="welcome-message"></h2>
+                    <button id="continue-button" class="primary-btn" onclick="quitWelcomeMessage(language)">Continue</button>
+                </div>
+                <div id="mode-selection" style="display: none">
+                    <h2 id="mode-selection-title"></h2>
+                    <button id="mode-1-button" class="mode-btn" onclick="modeSelection(0, language)">Training Mode</button>
+                    <button id="mode-2-button" class="mode-btn" onclick="modeSelection(1, language)">Gaming Mode</button>
+                </div>
+                <div id="calculation-selection" style="display: none">
+                    <h2 id="calc-selection-title">Select Calculation Type</h2>
+                    <button id="calc-1-button" class="mode-btn" onclick="selectCalculationType(0)">Addition</button>
+                    <button id="calc-2-button" class="mode-btn" onclick="selectCalculationType(1)">Subtraction</button>
+                    <button id="calc-3-button" class="mode-btn" onclick="selectCalculationType(2)">Multiplication</button>
+                    <button id="calc-4-button" class="mode-btn" onclick="selectCalculationType(3)">Division</button>
+                </div>
             </div>
 
             <!-- Game Area -->
@@ -177,6 +60,7 @@
                     <button class="mode-btn" onclick="selectMode(0)">Training Mode</button>
                     <button class="mode-btn" onclick="selectMode(1)">Gaming Mode</button>
                 </div>
+
 
                 <!-- Calculation Area -->
                 <div id="calculation-area" style="display: none;">
@@ -197,6 +81,7 @@
         <p>© 2024 All Rights Reserved | <a href="#">Instructions</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+     <script src="mine.js"></script>
 </body>
 </html>

@@ -50,7 +50,7 @@ main {
     align-items: center;
     height: calc(100vh - 80px);
     text-align: center;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .container {
@@ -123,12 +123,15 @@ input {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     background: #1a73e8;
     color: #fff;
     font-size: 0.9rem;
-    margin-top: 20px;
 }
 
 footer a {
