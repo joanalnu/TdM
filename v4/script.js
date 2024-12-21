@@ -6,6 +6,11 @@ let points = 0;
 let calc;
 
 function startGame() {
+    if (!document.getElementById("language").value) {
+        return; // Ensure language is selected
+    }
+
+
     language = document.getElementById("language").value; // define language
     document.getElementById("language-selection").style.display = "none"; // hide the language menu
     document.getElementById("welcome").style.display = "block"; // display welcome section
@@ -228,13 +233,17 @@ function generateCalculation() {
         currentCalculation = `${n1} ${operator} ${n2}`;
     } while (currentCalculation === previousCalculation);
 
+    // Handle division to avoid infinite loop
     if (operator === '/') {
-        while ((n1/n2)%10 != 0) {
+        n1 = Math.floor(Math.random() * 10) + 1; // Ensure n1 is a valid number
+        n2 = Math.floor(Math.random() * 9) + 1; // Ensure n2 is not zero
+        while (n1 % n2 !== 0) { // Ensure n1 is divisible by n2
             n1 = Math.floor(Math.random() * 10) + 1;
-            n2 = Math.floor(Math.random() * 10) + 1;
+            n2 = Math.floor(Math.random() * 9) + 1; // Avoid zero
         }
         currentCalculation = `${n1} ${operator} ${n2}`;
     }
+
     correctAnswer = eval(currentCalculation); // Not recommended, but safe for simple calculations
     document.getElementById("calculation").innerHTML = currentCalculation;
     document.getElementById("calculation-area").style.display = "block";
@@ -280,9 +289,11 @@ function submitAnswer() {
 }
 
 function quitGame() {
+    // Hide the game area and result message
     document.getElementById("game-area").style.display = "none";
     document.getElementById("result-message").innerText = '';
 
+    // Show goodbye message
     const goodbyeMessages = {
         "en": "Thanks for playing! You scored: ",
         "es": "¡Gracias por jugar! Has obtenido: ",
@@ -307,23 +318,49 @@ function quitGame() {
         "zh": " 分.",
         "ja": " 点.",
         "ko": " 점."
-    }
+    };
     
+    // Display goodbye message
     document.getElementById("goodbye-section").style.display = "block";
     document.getElementById("goodbye-message").innerHTML = goodbyeMessages[language] + points + pointsInDiffLanguages[language];
 
-    // Set a timeout to hide the section after 10 seconds
+    // Reset the state after a timeout
     setTimeout(function() {
         document.getElementById("goodbye-section").style.display = "none";
-        document.getElementById("language-selection").style.display = "block";
-    }, 70000);
+        document.getElementById("language-selection").style.display = "block"; // Make the language selection visible
+    }, 7000);
 
-
-    // reset all variables
+    // Reset all variables to their initial state
     language = undefined;
     mode = undefined;
     currentCalculation = undefined;
     correctAnswer = undefined;
     points = 0;
-    calc = undefined;   
+    calc = undefined;
+    previousCalculation = undefined;
+
+    // Optionally reset form values like the input field
+    document.getElementById("player-answer").value = '';
+}
+
+
+
+
+// log in modal
+function openModal(modalId){
+    document.getElementById(modalId).style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+    }
+
+    // Close modal when clicking outside of modal content
+    window.onclick = function(event) {
+    const modals = document.getElementsByClassName('modal');
+    for (let modal of modals) {
+        if (event.target === modal) {
+        modal.style.display = 'none';
+        }
+    }
 }

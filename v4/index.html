@@ -10,7 +10,7 @@
     <header>
         <div class="logo"></div>
         <div id="main-title" class="title">Mental Calculation Trainer</div>
-        <button class="login-btn">Log In</button>
+        <button class="login-btn" onclick="openModal('log-in-modal')">Log In</button>
     </header>
     <main class="background-image">
         <div class="container">
@@ -76,6 +76,13 @@
     <footer>
         <p id="footer">© 2024 All Rights Reserved | <a href="README.md">Instructions</a></p>
     </footer>
+
+    <div id="log-in-modal" class="modal">
+        <h3 id="log-in-title"></h3>
+        <div class="modal-content" id="log-in-content">
+
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
