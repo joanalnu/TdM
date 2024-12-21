@@ -78,9 +78,15 @@
     </footer>
 
     <div id="log-in-modal" class="modal">
-        <h3 id="log-in-title"></h3>
-        <div class="modal-content" id="log-in-content">
-
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('log-in-modal')">&times;</span>
+            <h2 id="log-in-title">Log In</h2>
+            <form id="login-form">
+                <input type="text" id="username" name="username" required> <!--add here langauge adaptation-->
+                <input type="password" id="password" name="password" required> <!--add here langauge adaptation-->
+                <button id="log-in-button" class="primary-btn" onclick="login()">Log In</button>
+            </form>
+            <p id="login-error"></p>
         </div>
     </div>
 

@@ -4,6 +4,8 @@ let currentCalculation;
 let correctAnswer;
 let points = 0;
 let calc;
+createModalContent(document.getElementById("language").value);
+
 
 function startGame() {
     if (!document.getElementById("language").value) {
@@ -363,4 +365,61 @@ function openModal(modalId){
         modal.style.display = 'none';
         }
     }
+}
+
+function createModalContent() {
+    modalTitle = {
+        "en": "Log In",
+        "es": "Iniciar sesión",
+        "ca": "Iniciar sessió",
+        "de": "Anmelden",
+        "fr": "Se connecter",
+        "it": "Accedi",
+        "pt": "Entrar",
+        "zh": "登录",
+        "ja": "ログイン",
+        "ko": "로그인"
+    }
+    modalContent = {
+        "en": "Logging in you can avoid having to configure your game each time.",
+        "es": "Al iniciar sesión, puede evitar tener que configurar su juego cada vez.",
+        "ca": "Al iniciar sessió, pot evitar haver de configurar el seu joc cada vegada.",
+        "de": "Wenn Sie sich anmelden, können Sie vermeiden, Ihr Spiel jedes Mal neu zu konfigurieren.",
+        "fr": "En vous connectant, vous pouvez éviter de devoir configurer votre jeu à chaque fois.",
+        "it": "Accedendo, puoi evitare di dover configurare il tuo gioco ogni volta.",
+        "pt": "Ao entrar, você pode evitar ter que configurar seu jogo a cada vez.",
+        "zh": "登录后，您可以避免每次都要配置游戏。",
+        "ja": "ログインすると、ゲームを毎回設定する必要がなくなります。",
+        "ko": "로그인하면 게임을 매번 설정할 필요가 없습니다."
+    }
+    document.getElementById("log-in-title").innerHTML = modalTitle[language];
+    document.getElementsById("log-in-button").innerHTML = modalTitle[language];
+    document.getElementById("log-in-content").innerHTML = modalContent[langauge];
+    Text1 = {
+        "en": "Username",
+        "es": "Nombre de usuario",
+        "ca": "Nom d'usuari",
+        "de": "Benutzername",
+        "fr": "Nom d'utilisateur",
+        "it": "Nome utente",
+        "pt": "Nome de usuário",
+        "zh": "用户名",
+        "ja": "ユーザー名",
+        "ko": "사용자 이름"
+    }
+    Text2 = {
+        "en": "Password",
+        "es": "Contraseña",
+        "ca": "Contrasenya",
+        "de": "Passwort",
+        "fr": "Mot de passe",
+        "it": "Password",
+        "pt": "Senha",
+        "zh": "密码",
+        "ja": "パスワード",
+        "ko": "비밀번호"
+    }
+    document.getElementById("log-in-username").innerHTML = Text1[language];
+    document.getElementById("log-in-password").innerHTML = Text2[language];
+    
 }
