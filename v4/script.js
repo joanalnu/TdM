@@ -41,14 +41,14 @@ function startGame() {
      // add enter button
     document.getElementById("player-answer").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-            submitAnswer(language);
+            submitAnswer();
         }
     });
 
-    getWelcomeMessage(language) // trigger welcome message
+    getWelcomeMessage() // trigger welcome message
 }
 
-function getWelcomeMessage(language) {
+function getWelcomeMessage() {
     continues = {
         "en": "Continue",
         "es": "Continuar",
@@ -78,7 +78,7 @@ function getWelcomeMessage(language) {
     
 }
 
-function quitWelcomeMessage(language) {
+function quitWelcomeMessage() {
     document.getElementById("welcome-section").style.display = "none";
     document.getElementById("mode-selection").style.display = "block";
 
@@ -212,7 +212,7 @@ function selectCalculationType(selectedCalc) {
     generateCalculation();
 }
 // low high selection missing
-function generateCalculation(mode) {
+function generateCalculation() {
     if (mode===0){
         console.log("Generating calculation with training mode...");
         const operator = calc;
@@ -230,7 +230,7 @@ function generateCalculation(mode) {
     document.getElementById("calculation-area").style.display = "block";
 }
 
-function submitAnswer(language) {
+function submitAnswer() {
     const correctMessages = {
         "en": "Correct! Points: ",
         "es": "¡Correcto! Puntos: ",
@@ -258,14 +258,14 @@ function submitAnswer(language) {
     const playerAnswer = parseInt(document.getElementById("player-answer").value);
     if (playerAnswer === correctAnswer) {
         points++;
-        document.getElementById("points").innerHTML = correctMessages(language) + points;
+        document.getElementById("points").innerHTML = correctMessages() + points;
     } else {
-        document.getElementById("points").innerHTML = incorrectMessages(language) + correctAnswer;
+        document.getElementById("points").innerHTML = incorrectMessages() + correctAnswer;
     }
     document.getElementById("player-answer").value = "";
 }
 
-function quitGame(language) {
+function quitGame() {
     document.getElementById("game-area").style.display = "none";
     // document.getElementById("points").innerHTML = '';
     document.getElementById("goodbye-section").style.display = "block"
