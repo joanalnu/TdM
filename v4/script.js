@@ -129,11 +129,10 @@ function modeSelection(selectedMode) {
     mode = selectedMode;
     if (mode === 1) {
         document.getElementById("game-area").style.display = "block";
-        document.getElementById("mode-selection-title").innerHTML = mode;
         generateCalculation();
     }
     else if (mode === 0) {
-        //Training Mde
+        //Training Mode
         document.getElementById("calculation-selection").style.display = "block";
     
         // setting up next page
@@ -215,14 +214,18 @@ function selectCalculationType(selectedCalc) {
 // low high selection missing
 function generateCalculation(mode) {
     if (mode===0){
+        console.log("Generating calculation with training mode...");
         const operator = calc;
     } else {
+        console.log("Generating random operator for gaming mode");
         const operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
     }
     const n1 = Math.floor(Math.random() * 10)
     const n2 = Math.floor(Math.random() * 10)
+    console.log("Number are generated");
     currentCalculation = `${n1} ${operator} ${n2}`;
     correctAnswer = eval(currentCalculation);
+    console.log("Displaying information");
     document.getElementById("calculation").innerHTML = currentCalculation;
     document.getElementById("calculation-area").style.display = "block";
 }
