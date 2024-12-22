@@ -398,14 +398,6 @@ function quitGame() {
     };
     document.getElementById("restart").innerHTML = restartButton[language];
 
-    // Reset game state after a timeout
-    setTimeout(function() {
-        // Hide goodbye message and show language selection screen
-        document.getElementById("goodbye-message").style.display = "none";
-        document.getElementById("restart").style.display = "block";
-        // document.getElementById("language-selection").style.display = "block";
-    }, 5000);
-
 
     // // Reset all game state variables
     // language = undefined;
