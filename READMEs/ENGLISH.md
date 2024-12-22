@@ -1,24 +1,12 @@
 # README
 
-Tablas de Multiplicar - Mental Calculation Trainer
+Tables de Multiplicar - Mental Calculation Trainer
 ================
 
 A program to help you with mental calculations
 -------------------
 
 This project is an application to help everyone practice mental calculations. It features modes to train and play as well as different features. Plus, it is totally free and open-source.
-
-Note that there's a version of this README (Instructions) file in each of the languages in which the game is available. Please, refer to you prefered language [here](/READMEs/).
-
-* [English](/READMEs/ENGLISH.md)
-* [Spanish](/READMEs/SPANISH.md)
-* [French](/READMEs/FRENCH.md)
-* [German](/READMEs/GERMAN.md)
-* [Italian](/READMEs/ITALIAN.md)
-* [Portuguese](/READMEs/PORTUGUESE.md)
-* [中文](/READMEs/中文.md)
-* [日语](/READMEs/日语.md)
-* [한국어](/READMEs/한국어.md)
 
 Table of Contents
 -----------------
