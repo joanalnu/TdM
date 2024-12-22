@@ -71,7 +71,6 @@ function handleEnterPress(event) {
     }
 }
 
-
 function getWelcomeMessage() {
     const continues = {
         "en": "Continue",
@@ -354,7 +353,7 @@ function quitGame() {
     document.getElementById("calculation-area").style.display = "none";
     document.getElementById("result-message").innerText = '';
 
-    // Show goodbye message for 7 seconds before starting a new game
+    // Show goodbye message for 5 seconds before starting a new game
     const goodbyeMessages = {
         "en": "Thanks for playing! You scored: ",
         "es": "¡Gracias por jugar! Has obtenido: ",
@@ -385,30 +384,46 @@ function quitGame() {
     document.getElementById("goodbye-section").style.display = "block";
     document.getElementById("goodbye-message").innerHTML = goodbyeMessages[language] + points + pointsInDiffLanguages[language];
 
+    const restartButton = {
+        "en": "Restart",
+        "es": "Reiniciar",
+        "ca": "Reiniciar",
+        "de": "Neustart",
+        "fr": "Redémarrer",
+        "it": "Riavvia",
+        "pt": "Reiniciar",
+        "zh": "重新开始",
+        "ja": "再開",
+        "ko": "다시 시작"
+    };
+    document.getElementById("restart").innerHTML = restartButton[language];
+
     // Reset game state after a timeout
     setTimeout(function() {
         // Hide goodbye message and show language selection screen
-        document.getElementById("goodbye-section").style.display = "none";
-        document.getElementById("language-selection").style.display = "block"; 
-    }, 7000);
+        document.getElementById("goodbye-message").style.display = "none";
+        document.getElementById("restart").style.display = "block";
+        // document.getElementById("language-selection").style.display = "block";
+    }, 5000);
 
-    // Reset all game state variables
-    language = undefined;
-    mode = undefined;
-    currentCalculation = undefined;
-    correctAnswer = undefined;
-    points = 0;
-    calc = undefined;
-    previousCalculation = undefined;
 
-    // Optionally reset input fields and other UI elements
-    document.getElementById("player-answer").value = '';
-    document.getElementById("mode-selection").style.display = "none";
-    document.getElementById("calculation-selection").style.display = "none";
+    // // Reset all game state variables
+    // language = undefined;
+    // mode = undefined;
+    // currentCalculation = undefined;
+    // correctAnswer = undefined;
+    // points = 0;
+    // calc = undefined;
+    // previousCalculation = undefined;
 
-    // Reinitialize the event listener for input
-    document.getElementById("player-answer").removeEventListener("keydown", handleEnterPress);
-    document.getElementById("player-answer").addEventListener("keydown", handleEnterPress);
+    // // Optionally reset input fields and other UI elements
+    // document.getElementById("player-answer").value = '';
+    // document.getElementById("mode-selection").style.display = "none";
+    // document.getElementById("calculation-selection").style.display = "none";
+
+    // // Reinitialize the event listener for input
+    // document.getElementById("player-answer").removeEventListener("keydown", handleEnterPress);
+    // document.getElementById("player-answer").addEventListener("keydown", handleEnterPress);
 }
 
 

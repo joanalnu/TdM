@@ -25,9 +25,14 @@ This is the 4th version of the program and the first in which we have implemente
 
 Features
 --------
-
-* List of key features of the project
-* Brief description of each feature
+* **Training Mode**: A mode to practice mental calculations in a way tailored to your needs.
+* **Gaming Mode**: A mode to challenge you with different operations at one time.
+* **User Interface**: An enhanced user interface to make the application more accessible and user-friendly compared to previous versions.
+* **JavaScript and Webview**: The application is built using JavaScript and webview, allowing for a more modern and interactive experience.
+* **Free and Open-Source**: The application is completely free and open-source, allowing anyone to contribute and modify the code.
+* **Multi-Operation Support**: The application supports multiple operations, including addition, subtraction, multiplication, and division.
+<!-- * **Customizable Difficulty**: The application allows users to customize the difficulty level of the calculations, making it suitable for users of all ages and skill levels. -->
+<!-- * **Score Tracking**: The application tracks the user's score and progress, providing a sense of accomplishment and motivation to improve. -->
 
 Installation
 ------------
