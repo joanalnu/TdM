@@ -247,6 +247,47 @@ function generateCalculation() {
 
     correctAnswer = eval(currentCalculation); // Not recommended, but safe for simple calculations
     document.getElementById("calculation").innerHTML = currentCalculation;
+
+    const submitButton = {
+        "en": "Submit",
+        "es": "Enviar",
+        "ca": "Enviar",
+        "de": "Senden",
+        "fr": "Soumettre",
+        "it": "Invia",
+        "pt": "Enviar",
+        "zh": "提交",
+        "ja": "送信",
+        "ko": "제출"
+    }
+    const quitButton = {
+        "en": "Quit",
+        "es": "Salir",
+        "ca": "Sortir",
+        "de": "Beenden",
+        "fr": "Quitter",
+        "it": "Esci",
+        "pt": "Sair",
+        "zh": "退出",
+        "ja": "終了",
+        "ko": "종료"
+    }
+    const yourAnswerText = {
+        "en": "Your answer",
+        "es": "Tu respuesta",
+        "ca": "La teva resposta",
+        "de": "Deine Antwort",
+        "fr": "Votre réponse",
+        "it": "La tua risposta",
+        "pt": "Sua resposta",
+        "zh": "你的答案",
+        "ja": "あなたの答え",
+        "ko": "당신의 답"
+    }
+    document.getElementById("submit-button").innerHTML = submitButton[language];
+    document.getElementById("quit-button").innerHTML = quitButton[language];
+    document.getElementById("player-answer").placeholder = yourAnswerText[language];
+
     document.getElementById("calculation-area").style.display = "block";
     previousCalculation = currentCalculation;
 }
