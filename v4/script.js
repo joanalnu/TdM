@@ -7,15 +7,33 @@ let calc;
 
 
 function startGame() {
+    // Ensure a language is selected
     if (!document.getElementById("language").value) {
-        return; // Ensure language is selected
+        return; // Stop if no language is selected
     }
 
-    language = document.getElementById("language").value; // define language
-    document.getElementById("language-selection").style.display = "none"; // hide the language menu
-    document.getElementById("welcome").style.display = "block"; // display welcome section
+    language = document.getElementById("language").value; // Set selected language
+    document.getElementById("language-selection").style.display = "none"; // Hide the language selection
+    document.getElementById("welcome").style.display = "block"; // Show the welcome message
 
-    // Change title based on selected language
+    // Update title and footer based on selected language
+    updateTitleAndFooter();
+
+    // Clear previous calculations and answers
+    document.getElementById("player-answer").value = '';
+    document.getElementById("result-message").innerText = '';
+
+    // Set up event listener for player answer
+    document.getElementById("player-answer").removeEventListener("keydown", handleEnterPress); // Remove old listener
+    document.getElementById("player-answer").addEventListener("keydown", handleEnterPress); // Add new listener
+
+    // Trigger welcome message and modal content
+    getWelcomeMessage();
+    createModalContent();
+}
+
+
+function updateTitleAndFooter() {
     const titles = {
         "en": "Mental Calculation Trainer",
         "es": "Entrenador de Cálculo Mental",
@@ -28,6 +46,7 @@ function startGame() {
         "ja": "メンタル計算トレーナー",
         "ko": "멘탈 계산 트레이너"
     };
+    
     const footers = {
         "en": "© 2024 All Rights Reserved | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instructions</a>",
         "es": "© 2024 Todos los derechos reservados | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instrucciones</a>",
@@ -39,20 +58,19 @@ function startGame() {
         "zh": "© 2024 版权所有 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>说明</a>",
         "ja": "© 2024 すべての権利予約 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>説明</a>",
         "ko": "© 2024 모든 권한 보유 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>설명</a>"
-    }
+    };
+
     document.getElementById("main-title").innerHTML = titles[language];
     document.getElementById("footer").innerHTML = footers[language];
-
-    document.getElementById("player-answer").addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault(); // Prevent default form submission
-            submitAnswer();
-        }
-    });
-
-    getWelcomeMessage(); // trigger welcome message
-    createModalContent();
 }
+
+function handleEnterPress(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent default form submission behavior
+        submitAnswer(); // Call the function to submit the player's answer
+    }
+}
+
 
 function getWelcomeMessage() {
     const continues = {
@@ -331,11 +349,12 @@ function submitAnswer() {
 }
 
 function quitGame() {
-    // Hide the game area and result message
+    // Hide game area and result message
     document.getElementById("game-area").style.display = "none";
+    document.getElementById("calculation-area").style.display = "none";
     document.getElementById("result-message").innerText = '';
 
-    // Show goodbye message
+    // Show goodbye message for 7 seconds before starting a new game
     const goodbyeMessages = {
         "en": "Thanks for playing! You scored: ",
         "es": "¡Gracias por jugar! Has obtenido: ",
@@ -349,7 +368,7 @@ function quitGame() {
         "ko": "게임에 참여해 주셔서 감사합니다! 당신의 점수는: "
     };
 
-    pointsInDiffLanguages = {
+    const pointsInDiffLanguages = {
         "en": " points.",
         "es": " puntos.",
         "ca": " punts.",
@@ -361,18 +380,19 @@ function quitGame() {
         "ja": " 点.",
         "ko": " 점."
     };
-    
+
     // Display goodbye message
     document.getElementById("goodbye-section").style.display = "block";
     document.getElementById("goodbye-message").innerHTML = goodbyeMessages[language] + points + pointsInDiffLanguages[language];
 
-    // Reset the state after a timeout
+    // Reset game state after a timeout
     setTimeout(function() {
+        // Hide goodbye message and show language selection screen
         document.getElementById("goodbye-section").style.display = "none";
-        document.getElementById("language-selection").style.display = "block"; // Make the language selection visible
+        document.getElementById("language-selection").style.display = "block"; 
     }, 7000);
 
-    // Reset all variables to their initial state
+    // Reset all game state variables
     language = undefined;
     mode = undefined;
     currentCalculation = undefined;
@@ -381,10 +401,15 @@ function quitGame() {
     calc = undefined;
     previousCalculation = undefined;
 
-    // Optionally reset form values like the input field
+    // Optionally reset input fields and other UI elements
     document.getElementById("player-answer").value = '';
-}
+    document.getElementById("mode-selection").style.display = "none";
+    document.getElementById("calculation-selection").style.display = "none";
 
+    // Reinitialize the event listener for input
+    document.getElementById("player-answer").removeEventListener("keydown", handleEnterPress);
+    document.getElementById("player-answer").addEventListener("keydown", handleEnterPress);
+}
 
 
 
@@ -419,7 +444,7 @@ function createModalContent() {
         "zh": "登录",
         "ja": "ログイン",
         "ko": "로그인"
-    }
+    };
     const modalContent = {
         "en": "Logging in you can avoid having to configure your game each time.",
         "es": "Al iniciar sesión, puede evitar tener que configurar su juego cada vez.",
@@ -431,7 +456,7 @@ function createModalContent() {
         "zh": "登录后，您可以避免每次都要配置游戏。",
         "ja": "ログインすると、ゲームを毎回設定する必要がなくなります。",
         "ko": "로그인하면 게임을 매번 설정할 필요가 없습니다."
-    }
+    };
     const notYetModalContent = {
         "en": "We are sorry to inform that this feature is still under development.",
         "es": "Lo sentimos, pero esta función aún está en desarrollo.",
