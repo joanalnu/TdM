@@ -1,49 +1,147 @@
-Hello user!!
-This is the README file for the program: "3_release_TdM_final.py".
+# README
 
-Instructions:
-For using or running the file you need to have a python coding environment. You can download the official python IDLE in this link: python.org. Once installed, open the python IDLE and open the file (Ctrl+O, Cmd+O). Now you can click on "F5" and the game will start. If have any problems please contact me (see GitHub porfile). Thank you for using this program, I hope you enjoy it.
+Tables de Multiplicar - Mental Calculation Trainer
+================
 
+A program to help you with mental calculations
+-------------------
 
-Story:
-All began with the first release, a basic python coded module that can help practicing multiplications from 1 to 10. But this code had some bugs and some extra things could be added.
+This project is an application to help everyone practice mental calculations. It features modes to train and play as well as different features. Plus, it is totally free and open-source.
 
-A better update was the second release. This release enabled to select a language (English or Spanish) and to choose the lowest and highest values. The backend system was however very simple.
+Table of Contents
+-----------------
 
-So the third release came, the best of all three and the one you have downloaded. This release fixes all existing bugs of the system using functions. It introduces the training and gaming modes and allows you to practice or play with three arithmetic operators (+,-,*). It also changes the previous '0' command to a 'q' for preventing confusion and ables you to use integer division on the training mode. And it can be used in three different languages, English, Spanish and Catalan.
+* [Project Overview](#project-overview)
+* [Features](#features)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [License](#license)
 
-And if you are wondering what the name "TdM" means, it stays for "Tablas de Multiplicar".
+Project Overview
+----------------
 
------------------------------------------------------------------------------------------------------
+This is the 4th version of the program and the first in which we have implemented JavaScript and webview. The previous versions were based on Python and required to be run on the terminal. With this new version, we have enhanced the user interface as well as added some features. Our goal is to help everyone improve their mental calculation skills. We have included a mode to train and a mode to play. The training mode will help you practice in a way tailored to your needs. Whereas the play mode will challenge you with different operations at one time.
 
-¡Hola usuario!
-Este es el documento README para el programa "3_release_TdM_final.py".
+Features
+--------
+* **Training Mode**: A mode to practice mental calculations in a way tailored to your needs.
+* **Gaming Mode**: A mode to challenge you with different operations at one time.
+* **User Interface**: An enhanced user interface to make the application more accessible and user-friendly compared to previous versions.
+* **JavaScript and Webview**: The application is built using JavaScript and webview, allowing for a more modern and interactive experience.
+* **Free and Open-Source**: The application is completely free and open-source, allowing anyone to contribute and modify the code.
+* **Multi-Operation Support**: The application supports multiple operations, including addition, subtraction, multiplication, and division.
+<!-- * **Customizable Difficulty**: The application allows users to customize the difficulty level of the calculations, making it suitable for users of all ages and skill levels. -->
+<!-- * **Score Tracking**: The application tracks the user's score and progress, providing a sense of accomplishment and motivation to improve. -->
 
-Instrucciones:
-Para usar o correr el archivo necesita tener instalado un entorno de python. Puede descargar el IDLE official de python en el siguiente link: python.org. Una vez instalado, puede abrir el python IDLE y puede abrir el archivo (Ctrl+O, Cmd+O). Ahora puede clicar en "F5" y el juego empezará. Si tiene algún problema contácteme (ver perfil de GitHub). Gracias por utilizar este programa, espero que lo disfrutes.
+Installation
+------------
 
+1. Step 1: Clone the repository from GitHub using the button
+2. Step 2: Unzip folder and access the v4 folder inside it
+3. Step 3: Open the index.html on your browser (by double clicking it)
+4. Step 4: You can consider adding a link to this file elsewhere in your computer to make it more accessible from there.
 
-Historia:
-Todo empezó con la primera versión, un código de python básico que te permitía practicar las multiplicaciones del 1 al 10. Pero este programa tenía muchos errores y muchas cosas que se podían añadir.
+Usage
+-----
 
-La segunda versión fue mejor. Con esta versión podías seleccionar un idioma (inglés o español) y podías escoger el valor más bajo y más alto. Aun así, el sistema logístico no era del todo robusto.
+### Getting Started
 
-La tercera versión es la definitiva, la mejor de las tres y la que usted ha descargado. Esta versión soluciona todos los errores y problemas de las otras versiones usando un sistema de funciones. También introduce los modos de entrenamiento y de juego y te permite practicar o jugar con tres operaciones aritméticas (+,-,*). Esta versión también cambia el anterior comando '0' por 'q' para evitar confusiones y te permite usar divisiones enteras en el modo entrenamiento. Asimismo, esta versión se puede usar en inglés, español y catalán.
+1. Step 1: Run the project
+2. Step 2: Follow the prompts
 
-Por cierto, si te preguntas que significan las letras "TdM", son las siglas para "Tablas de Multiplicar".
+Contributing
+------------
 
------------------------------------------------------------------------------------------------------
+### Guidelines
 
-Hola usuari!
-Aquest és el document README per a el programa "3_release_TdM_final.py".
+This is an open-source project and we encourage you to contribute to it. Please, follow the guidelines below and don't forget to adhere to our [Code of Conduct](https://github.com/TdM/blob/main/CODE_OF_CONDUCT.md)
 
-Intruccions:
+#### Step 1: Fork the Repository
 
-Història:
-Tot va commença ambiance la primera versió, un codi de python bàsic que et permetia practicar les multiplicacions de l'1 al 10. Però aquest programa tenia molts errors I moltes coses que es podien afegir.
+Fork the repository by clicking the "Fork" button in the top-right corner of the repository page. This will create a copy of the repository in your own GitHub account.
 
-La segona versió va ser millor. Amb aquesta versió podies seleccionar un idioma (anglès o Espanyol) i podies escollir el valor més baix i el més alt. Tot i això, el sistema logístic no era del tot robust.
+#### Step 2: Clone the Repository
 
-La tercera versió és la definitiva, la millor de les tres i la que vosté ha descarregat. Aquesta versió soluciona tots els errors i problemes de les altres versions utilitzant un sistema de funcions. També introdueix els modes de entrenament i de joc que et permeten practicar o jugar amb tres operacions arimètiques (+,-,*). Aquesta versió també canvia la comanda '0' per 'q' per evitar confusions i et permet utilitzar divisions al mode entrenament. Tanmateix, aquesta versió es pot utilitzar en anglès, espanyol i català.
+Clone the repository to your local machine using the command:
 
-Per cert, si et preguntes que signifiquen les lletres "TdM", son les sigles per "Taules de Multiplicar".
+```bash
+git clone https://github.com/your-username/tdm.git
+```
+
+#### Step 3: Create a New Branch
+
+Create a new branch to work on your contribution using the command:
+
+```bash
+git checkout -b your-branch-name
+```
+
+#### Step 4: Make Changes
+
+Make the necessary changes to the code or documentation. Make sure to follow the project's coding standards and guidelines.
+
+#### Step 5: Commit Changes
+
+Commit your changes using the command:
+
+```bash
+git add .
+git commit -m "Your commit message"
+```
+
+#### Step 6: Push Changes
+
+Push your changes to your forked repository using the command:
+
+```bash
+git push origin your-branch-name
+```
+
+#### Step 7: Create a Pull Request
+
+Create a pull request to merge your changes into the main repository. To do this, go to the repository page and click the "New pull request" button. Select the branch you want to merge into and fill in the pull request description.
+
+#### Step 8: Review and Merge
+
+The project maintainers will review your pull request and merge it into the main repository if it is considered adequate.
+
+### Guidelines for Contributions
+
+* Make sure to follow the project's coding standards and guidelines.
+* Keep your contributions concise and focused on a single issue or feature.
+* Use clear and descriptive commit messages.
+* Use clear and descriptive pull request titles and descriptions.
+* Make sure to test your changes before submitting a pull request.
+
+### Reporting Issues
+
+If you find an issue with the project, please report it using the issue tracker. To report an issue, follow these steps:
+
+1. Go to the [Issue Tracker](https://github.com/joanalnu/tdm/issues) page.
+2. Click on the "New issue" button.
+3. Fill in the title and description of the issue. Be as detailed as possible.
+4. Choose the relevant labels for the issue (e.g. bug, feature, enhancement).
+5. Assign the issue to the relevant person or team, if applicable.
+6. Click on the "Submit new issue" button.
+
+Note: Before reporting an issue, make sure to check if a similar issue already exists in the repository.
+
+### Reporting Issues
+#### Adding new GitHub Issues
+
+To add a new issue to the repository, follow these steps:
+
+1. Go to the [Issue Tracker](https://github.com/joanalnu/tdm/issues) page.
+2. Click on the "New issue" button.
+3. Fill in the title and description of the issue. Be as detailed as possible.
+4. Choose the relevant labels for the issue (e.g. bug, feature, enhancement).
+5. Assign the issue to the relevant person or team, if applicable.
+6. Click on the "Submit new issue" button.
+
+Note: Before adding a new issue, make sure to check if a similar issue already exists in the repository.
+
+License
+-------
+
+This project is licensed under the [MIT License](https://github.com/joanalnu/tdm/blob/main/LICENSE.md).
