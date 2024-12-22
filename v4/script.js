@@ -4,14 +4,12 @@ let currentCalculation;
 let correctAnswer;
 let points = 0;
 let calc;
-createModalContent(document.getElementById("language").value);
 
 
 function startGame() {
     if (!document.getElementById("language").value) {
         return; // Ensure language is selected
     }
-
 
     language = document.getElementById("language").value; // define language
     document.getElementById("language-selection").style.display = "none"; // hide the language menu
@@ -53,6 +51,7 @@ function startGame() {
     });
 
     getWelcomeMessage(); // trigger welcome message
+    createModalContent();
 }
 
 function getWelcomeMessage() {
@@ -368,7 +367,7 @@ function openModal(modalId){
 }
 
 function createModalContent() {
-    modalTitle = {
+    const modalTitle = {
         "en": "Log In",
         "es": "Iniciar sesión",
         "ca": "Iniciar sessió",
@@ -380,7 +379,7 @@ function createModalContent() {
         "ja": "ログイン",
         "ko": "로그인"
     }
-    modalContent = {
+    const modalContent = {
         "en": "Logging in you can avoid having to configure your game each time.",
         "es": "Al iniciar sesión, puede evitar tener que configurar su juego cada vez.",
         "ca": "Al iniciar sessió, pot evitar haver de configurar el seu joc cada vegada.",
@@ -392,10 +391,22 @@ function createModalContent() {
         "ja": "ログインすると、ゲームを毎回設定する必要がなくなります。",
         "ko": "로그인하면 게임을 매번 설정할 필요가 없습니다."
     }
+    const notYetModalContent = {
+        "en": "We are sorry to inform that this feature is still under development.",
+        "es": "Lo sentimos, pero esta función aún está en desarrollo.",
+        "ca": "Ens disculpem, però aquesta funció encara està en desenvolupament.",
+        "de": "Wir entschuldigen uns, aber diese Funktion ist noch in der Entwicklung.",
+        "fr": "Nous sommes désolés de vous informer que cette fonctionnalité est encore en développement.",
+        "it": "Ci scusiamo, ma questa funzionalità è ancora in sviluppo.",
+        "pt": "Lamento informar que essa funcionalidade ainda está em desenvolvimento.",
+        "zh": "我们很抱歉告诉您，这个功能还在开发中。",
+        "ja": "ごめんなさいですが、この機能はまだ開発中です。",
+        "ko": "죄송하지만, 이 기능은 아직 개발 중입니다."
+    };
     document.getElementById("log-in-title").innerHTML = modalTitle[language];
-    document.getElementsById("log-in-button").innerHTML = modalTitle[language];
-    document.getElementById("log-in-content").innerHTML = modalContent[langauge];
-    Text1 = {
+    document.getElementById("log-in-button").innerHTML = modalTitle[language];
+    document.getElementById("log-in-content").innerHTML = notYetModalContent[language];
+    const text1 = {
         "en": "Username",
         "es": "Nombre de usuario",
         "ca": "Nom d'usuari",
@@ -407,7 +418,7 @@ function createModalContent() {
         "ja": "ユーザー名",
         "ko": "사용자 이름"
     }
-    Text2 = {
+    const text2 = {
         "en": "Password",
         "es": "Contraseña",
         "ca": "Contrasenya",
@@ -419,7 +430,6 @@ function createModalContent() {
         "ja": "パスワード",
         "ko": "비밀번호"
     }
-    document.getElementById("log-in-username").innerHTML = Text1[language];
-    document.getElementById("log-in-password").innerHTML = Text2[language];
-    
+    document.getElementById("username").placeholder = text1[language];
+    document.getElementById("password").placeholder = text2[language];
 }
