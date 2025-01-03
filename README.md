@@ -17,9 +17,23 @@ Note that there's a version of this README (Instructions) file in each of the la
 * [Français](/READMEs/FRANCAIS.md)
 * [Italian](/READMEs/ITALIAN.md)
 * [Português](/READMEs/PORTUGUES.md)
-* [中文](/READMEs/chinese.md)
-* [日语](/READMEs/japanese.md)
-* [한국어](/READMEs/korean.md)
+* [中文](/READMEs/CHINESE.md)
+* [日语](/READMEs/JAPANESE.md)
+* [한국어](/READMEs/KOREAN.md)
+* [عربي](/READMEs/ARABIC.md)
+* [русский](/READMEs/PYCCKNN.md)
+* [हिन्दी](/READMEs/HINDI.md)
+* [বাংলা](/READMEs/BENGALI.md)
+* [Türkçe](/READMEs/TURKCE.md)
+* [Tiếng Việt](/READMEs/VIETNAMESE.md)
+* [ไทย](/READMEs/THAI.md)
+* [فارسی](READMEs/PERSIAN.md)
+* [Melayu](/READMEs/MELAYU.md)
+* [Filipino](/READMEs/FILIPINO.md)
+* [Kiswahili](/READMEs/KISWAHILI.md)
+* [Polski](/READMEs/POLSKI.md)
+* [Українська](/READMEs/UKRAINIAN.md)
+
 
 
 Table of Contents
