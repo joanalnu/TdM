@@ -1,4 +1,4 @@
-messages = {
+const messages = {
     titles: {
         "en": "Mental Calculation Trainer",
         "es": "Entrenador de Cálculo Mental",
@@ -9,7 +9,20 @@ messages = {
         "pt": "Treinador de Cálculo Mental",
         "zh": "心算训练员",
         "ja": "メンタル計算トレーナー",
-        "ko": "멘탈 계산 트레이너"
+        "ko": "멘탈 계산 트레이너",
+        "ar": "مدرب الحساب الذهني",
+        "ru": "Тренер по ментальной арифметике",
+        "hi": "मानसिक गणना प्रशिक्षक",
+        "bn": "মানসিক গণনা প্রশিক্ষক",
+        "tr": "Zihinsel Hesaplama Eğitmeni",
+        "vi": "Huấn luyện viên Tính toán Tâm trí",
+        "th": "ผู้ฝึกสอนการคำนวณทางจิต",
+        "fa": "مربی حساب ذهنی",
+        "ms": "Jurulatih Pengiraan Mental",
+        "tl": "Tagapagsanay sa Mental na Pagkalkula",
+        "sw": "Mfundishaji wa Hesabu za Akili",
+        "pl": "Trener Obliczeń Mentalnych",
+        "uk": "Тренер з ментальної арифметики"
     },
     footers: {
         "en": "© 2024 All Rights Reserved | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instructions</a>",
@@ -21,7 +34,20 @@ messages = {
         "pt": "© 2024 Todos os direitos reservados | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instruções</a>",
         "zh": "© 2024 版权所有 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>说明</a>",
         "ja": "© 2024 すべての権利予約 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>説明</a>",
-        "ko": "© 2024 모든 권한 보유 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>설명</a>"
+        "ko": "© 2024 모든 권한 보유 | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>설명</a>",
+        "ar": "© 2024 جميع الحقوق محفوظة | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>تعليمات</a>",
+        "ru": "© 2024 Все права защищены | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Инструкции</a>",
+        "hi": "© 2024 सभी अधिकार सुरक्षित | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>निर्देश</a>",
+        "bn": "© 2024 সমস্ত অধিকার সংরক্ষিত | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>নির্দেশাবলী</a>",
+        "tr": "© 2024 Tüm hakları saklıdır | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Talimatlar</a>",
+        "vi": "© 2024 Bảo lưu tất cả quyền | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Hướng dẫn</a>",
+        "th": "© 2024 สงวนลิขสิทธิ์ | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>คำแนะนำ</a>",
+        "fa": "© 2024 کلیه حقوق محفوظ است | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>دستورالعمل‌ها</a>",
+        "ms": "© 2024 Semua Hak Cipta Terpelihara | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Arahan</a>",
+        "tl": "© 2024 Lahat ng Karapatan ay Nakalaan | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Mga Tagubilin</a>",
+        "sw": "© 2024 Haki Zote Zinaifadhiwa | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Maagizo</a>",
+        "pl": "© 2024 Wszelkie prawa zastrzeżone | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Instrukcje</a>",
+        "uk": "© 2024 Усі права захищені | <a href='https://github.com/joanalnu/TdM/blob/main/README.md'>Інструкції</a>"
     },
     continues: {
         "en": "Continue",
@@ -33,7 +59,20 @@ messages = {
         "pt": "Continuar",
         "zh": "继续",
         "ja": "続ける",
-        "ko": "계속하기"
+        "ko": "계속하기",
+        "ar": "استمرار",
+        "ru": "Продолжить",
+        "hi": "जारी रखें",
+        "bn": "অবিরত রাখুন",
+        "tr": "Devam Et",
+        "vi": "Tiếp tục",
+        "th": "ดำเนินการต่อ",
+        "fa": "ادامه دادن",
+        "ms": "Teruskan",
+        "tl": "Magpatuloy",
+        "sw": "Endelea",
+        "pl": "Kontynuuj",
+        "uk": "Продовжити"
     },
     welcomeMessages: {
         "en": "Hello, I'm your mental calculation trainer.",
@@ -45,7 +84,20 @@ messages = {
         "pt": "Olá, sou o vosso treinador de cálculo mental.",
         "zh": "你好，我是你的心算培训师。",
         "ja": "こんにちは、私はあなたのメンタル計算トレーナーです。",
-        "ko": "안녕하세요, 저는 여러분의 멘탈 계산 트레이너입니다."
+        "ko": "안녕하세요, 저는 여러분의 멘탈 계산 트레이너입니다.",
+        "ar": "مرحبًا، أنا مدرب الحساب الذهني الخاص بك.",
+        "ru": "Здравствуйте, я ваш тренер по ментальной арифметике.",
+        "hi": "नमस्ते, मैं आपका मानसिक गणना प्रशिक्षक हूँ।",
+        "bn": "হ্যালো, আমি আপনার মানসিক গণনা প্রশিক্ষক।",
+        "tr": "Merhaba, ben sizin zihinsel hesaplama eğitmeninizim.",
+        "vi": "Xin chào, tôi là huấn luyện viên tính toán tâm trí của bạn.",
+        "th": "สวัสดีครับ/ค่ะ, ฉันคือนักฝึกสอนการคำนวณทางจิตของคุณ",
+        "fa": "سلام، من مربی حساب ذهنی شما هستم.",
+        "ms": "Hello, saya pelatih pengiraan mental anda.",
+        "tl": "Kamusta, ako ang iyong tagapagsanay sa mental na pagkalkula.",
+        "sw": "Habari, mimi ni mfundishaji wako wa hesabu za akili.",
+        "pl": "Cześć, jestem twoim trenerem obliczeń mentalnych.",
+        "uk": "Привіт, я ваш тренер з ментальної арифметики."
     },
     modeSelectionTitles: {
         "en": "Select a Mode",
@@ -57,7 +109,20 @@ messages = {
         "pt": "Selecionar o modo",
         "zh": "选择模式",
         "ja": "モード選択",
-        "ko": "모드 선택"
+        "ko": "모드 선택",
+        "ar": "اختر وضعًا",
+        "ru": "Выберите режим",
+        "hi": "एक मोड चुनें",
+        "bn": "একটি মোড নির্বাচন করুন",
+        "tr": "Bir Mod Seçin",
+        "vi": "Chọn chế độ",
+        "th": "เลือกโหมด",
+        "fa": "یک حالت انتخاب کنید",
+        "ms": "Pilih Mod",
+        "tl": "Pumili ng Mode",
+        "sw": "Chagua Hali",
+        "pl": "Wybierz tryb",
+        "uk": "Виберіть режим"
     },
     modeButtons: {
         "mode1": {
@@ -70,7 +135,20 @@ messages = {
             "pt": "Modo de Treinamento",
             "zh": "培训模式",
             "ja": "トレーニングモード",
-            "ko": "교육 모드"
+            "ko": "교육 모드",
+            "ar": "وضع التدريب",
+            "ru": "Режим тренировки",
+            "hi": "प्रशिक्षण मोड",
+            "bn": "প্রশিক্ষণ মোড",
+            "tr": "Eğitim Modu",
+            "vi": "Chế độ huấn luyện",
+            "th": "โหมดการฝึกอบรม",
+            "fa": "حالت آموزش",
+            "ms": "Mod Latihan",
+            "tl": "Mode ng Pagsasanay",
+            "sw": "Hali ya Mafunzo",
+            "pl": "Tryb treningu",
+            "uk": "Режим тренування"
         },
         "mode2": {
             "en": "Gaming Mode",
@@ -82,7 +160,20 @@ messages = {
             "pt": "Modo de Jogo",
             "zh": "游戏模式",
             "ja": "ゲーミング・モード",
-            "ko": "게임 모드"
+            "ko": "게임 모드",
+            "ar": "وضع اللعب",
+            "ru": "Игровой режим",
+            "hi": "गेमिंग मोड",
+            "bn": "গেমিং মোড",
+            "tr": "Oyun Modu",
+            "vi": "Chế độ chơi",
+            "th": "โหมดเกม",
+            "fa": "حالت بازی",
+            "ms": "Mod Permainan",
+            "tl": "Mode ng Paglalaro",
+            "sw": "Hali ya Michezo",
+            "pl": "Tryb gry",
+            "uk": "Ігровий режим"
         }
     },
     calcButtons: {
@@ -96,7 +187,20 @@ messages = {
             "pt": "Adição",
             "zh": "加法",
             "ja": "加算",
-            "ko": "더하기"
+            "ko": "더하기",
+            "ar": "جمع",
+            "ru": "Сложение",
+            "hi": "जोड़",
+            "bn": "যোগফল",
+            "tr": "Toplama",
+            "vi": "Cộng",
+            "th": "การบวก",
+            "fa": "جمع",
+            "ms": "Penambahan",
+            "tl": "Pagdaragdag",
+            "sw": "Kuongeza",
+            "pl": "Dodawanie",
+            "uk": "Додавання"
         },
         "calc2": {
             "en": "Subtraction",
@@ -108,7 +212,20 @@ messages = {
             "pt": "Subtração",
             "zh": "减法",
             "ja": "減算",
-            "ko": "빼기"
+            "ko": "빼기",
+            "ar": "طرح",
+            "ru": "Вычитание",
+            "hi": "घटाना",
+            "bn": "বিয়োগ",
+            "tr": "Çıkarma",
+            "vi": "Trừ",
+            "th": "การลบ",
+            "fa": "تفریق",
+            "ms": "Penolakan",
+            "tl": "Pagbabawas",
+            "sw": "Kupunguza",
+            "pl": "Odejmowanie",
+            "uk": "Віднімання"
         },
         "calc3": {
             "en": "Multiplication",
@@ -120,7 +237,20 @@ messages = {
             "pt": "Multiplicação",
             "zh": "乘法",
             "ja": "乗算",
-            "ko": "곱하기"
+            "ko": "곱하기",
+            "ar": "ضرب",
+            "ru": "Умножение",
+            "hi": "गुणा",
+            "bn": "গুণ",
+            "tr": "Çarpma",
+            "vi": "Nhân",
+            "th": "การคูณ",
+            "fa": "ضرب",
+            "ms": "Pendaraban",
+            "tl": "Pagmumultiply",
+            "sw": "Mara",
+            "pl": "Mnożenie",
+            "uk": "Множення"
         },
         "calc4": {
             "en": "Division",
@@ -132,7 +262,20 @@ messages = {
             "pt": "Divisão",
             "zh": "除法",
             "ja": "除算",
-            "ko": "나누기"
+            "ko": "나누기",
+            "ar": "قسمة",
+            "ru": "Деление",
+            "hi": "भाग",
+            "bn": "ভাগ",
+            "tr": "Bölme",
+            "vi": "Chia",
+            "th": "การหาร",
+            "fa": "تقسیم",
+            "ms": "Pembahagian",
+            "tl": "Paghahati",
+            "sw": "Gawanya",
+            "pl": "Dzielenie",
+            "uk": "Ділення"
         }
     },
     submitButton: {
@@ -145,7 +288,20 @@ messages = {
         "pt": "Enviar",
         "zh": "提交",
         "ja": "送信",
-        "ko": "제출"
+        "ko": "제출",
+        "ar": "إرسال",
+        "ru": "Отправить",
+        "hi": "सबमिट करें",
+        "bn": "জমা দিন",
+        "tr": "Gönder",
+        "vi": "Gửi",
+        "th": "ส่ง",
+        "fa": "ارسال",
+        "ms": "Hantar",
+        "tl": "I-submit",
+        "sw": "Tuma",
+        "pl": "Wyślij",
+        "uk": "Відправити"
     },
     quitButton: {
         "en": "Quit",
@@ -157,7 +313,20 @@ messages = {
         "pt": "Sair",
         "zh": "退出",
         "ja": "終了",
-        "ko": "종료"
+        "ko": "종료",
+        "ar": "خروج",
+        "ru": "Выйти",
+        "hi": "बाहर जाएं",
+        "bn": "বের হয়ে যান",
+        "tr": "Çık",
+        "vi": "Thoát",
+        "th": "ออก",
+        "fa": "خروج",
+        "ms": "Keluar",
+        "tl": "Lumabas",
+        "sw": "Toka",
+        "pl": "Zakończ",
+        "uk": "Вийти"
     },
     yourAnswerText: {
         "en": "Your answer",
@@ -169,7 +338,20 @@ messages = {
         "pt": "Sua resposta",
         "zh": "你的答案",
         "ja": "あなたの答え",
-        "ko": "당신의 답"
+        "ko": "당신의 답",
+        "ar": "إجابتك",
+        "ru": "Ваш ответ",
+        "hi": "आपका उत्तर",
+        "bn": "আপনার উত্তর",
+        "tr": "Cevabınız",
+        "vi": "Câu trả lời của bạn",
+        "th": "คำตอบของคุณ",
+        "fa": "پاسخ شما",
+        "ms": "Jawapan anda",
+        "tl": "Ang iyong sagot",
+        "sw": "Jibu lako",
+        "pl": "Twoja odpowiedź",
+        "uk": "Ваша відповідь"
     },
     correctMessages: {
         "en": "Correct! Points: ",
@@ -181,7 +363,20 @@ messages = {
         "pt": "Correto! Pontos: ",
         "zh": "正确！分数：",
         "ja": "正解！ポイント：",
-        "ko": "정답! 포인트: "
+        "ko": "정답! 포인트: ",
+        "ar": "صحيح! النقاط: ",
+        "ru": "Правильно! Очки: ",
+        "hi": "सही! अंक: ",
+        "bn": "সঠিক! পয়েন্ট: ",
+        "tr": "Doğru! Puanlar: ",
+        "vi": "Đúng! Điểm: ",
+        "th": "ถูกต้อง! คะแนน: ",
+        "fa": "درست! امتیاز: ",
+        "ms": "Betul! Mata: ",
+        "tl": "Tama! Mga puntos: ",
+        "sw": "Sahihi! Pointi: ",
+        "pl": "Poprawnie! Punkty: ",
+        "uk": "Правильно! Бали: "
     },
     incorrectMessages: {
         "en": "Oh no! The correct answer was: ",
@@ -193,7 +388,20 @@ messages = {
         "pt": "Oh não! A resposta correta era: ",
         "zh": "哦不！正确答案是：",
         "ja": "おっと！正しい答えは：",
-        "ko": "오 안돼! 정답은: "
+        "ko": "오 안돼! 정답은: ",
+        "ar": "أوه لا! الإجابة الصحيحة كانت: ",
+        "ru": "О нет! Правильный ответ был: ",
+        "hi": "अरे नहीं! सही उत्तर था: ",
+        "bn": "ওহ না! সঠিক উত্তর ছিল: ",
+        "tr": "Ah hayır! Doğru cevap şuydu: ",
+        "vi": "Ôi không! Câu trả lời đúng là: ",
+        "th": "โอ้ไม่! คำตอบที่ถูกต้องคือ: ",
+        "fa": "اوه نه! پاسخ درست این بود: ",
+        "ms": "Oh tidak! Jawapan yang betul ialah: ",
+        "tl": "Oh hindi! Ang tamang sagot ay: ",
+        "sw": "Oh hapana! Jibu sahihi lilikuwa: ",
+        "pl": "Och nie! Prawidłowa odpowiedź to: ",
+        "uk": "О ні! Правильна відповідь була: "
     },
     goodbyeMessages: {
         "en": "Thanks for playing! You scored: ",
@@ -205,7 +413,20 @@ messages = {
         "pt": "Obrigado por jogar! Você marcou: ",
         "zh": "感谢您的参与！您得分：",
         "ja": "遊んでくれてありがとう！あなたのスコア：",
-        "ko": "게임에 참여해 주셔서 감사합니다! 당신의 점수는: "
+        "ko": "게임에 참여해 주셔서 감사합니다! 당신의 점수는: ",
+        "ar": "شكرًا للعب! لقد حصلت على: ",
+        "ru": "Спасибо за игру! Вы набрали: ",
+        "hi": "खेलने के लिए धन्यवाद! आपने अंक प्राप्त किए: ",
+        "bn": "খেলাধুলার জন্য ধন্যবাদ! আপনি স্কোর করেছেন: ",
+        "tr": "Oynadığınız için teşekkürler! Puanınız: ",
+        "vi": "Cảm ơn đã chơi! Bạn đã ghi được: ",
+        "th": "ขอบคุณที่เล่น! คุณทำคะแนนได้: ",
+        "fa": "ممنون از بازی! شما امتیاز گرفتید: ",
+        "ms": "Terima kasih kerana bermain! Anda mendapat: ",
+        "tl": "Salamat sa paglalaro! Nakakuha ka ng: ",
+        "sw": "Asante kwa kucheza! Umejumuisha: ",
+        "pl": "Dziękujemy za grę! Zdobyłeś: ",
+        "uk": "Дякуємо за гру! Ви заробили: "
     },
     pointsInDiffLanguages: {
         "en": " points.",
@@ -217,7 +438,20 @@ messages = {
         "pt": " pontos.",
         "zh": " 分.",
         "ja": " 点.",
-        "ko": " 점."
+        "ko": " 점.",
+        "ar": " نقاط.",
+        "ru": " очков.",
+        "hi": " अंक.",
+        "bn": " পয়েন্ট.",
+        "tr": " puan.",
+        "vi": " điểm.",
+        "th": " คะแนน.",
+        "fa": " امتیاز.",
+        "ms": " mata.",
+        "tl": " mga puntos.",
+        "sw": " pointi.",
+        "pl": " punkty.",
+        "uk": " бали."
     },
     restartButton: {
         "en": "Restart",
@@ -229,7 +463,20 @@ messages = {
         "pt": "Reiniciar",
         "zh": "重新开始",
         "ja": "再開",
-        "ko": "다시 시작"
+        "ko": "다시 시작",
+        "ar": "إعادة التشغيل",
+        "ru": "Перезапустить",
+        "hi": "पुनः प्रारंभ करें",
+        "bn": "পুনরায় শুরু করুন",
+        "tr": "Yeniden Başlat",
+        "vi": "Khởi động lại",
+        "th": "เริ่มใหม่",
+        "fa": "راه اندازی مجدد",
+        "ms": "Mula semula",
+        "tl": "I-restart",
+        "sw": "Anza tena",
+        "pl": "Restart",
+        "uk": "Перезапустити"
     }
 };
 
