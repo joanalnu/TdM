@@ -1,4 +1,4 @@
-const messages = {
+messages = {
     titles: {
         "en": "Mental Calculation Trainer",
         "es": "Entrenador de Cálculo Mental",
@@ -194,6 +194,42 @@ const messages = {
         "zh": "哦不！正确答案是：",
         "ja": "おっと！正しい答えは：",
         "ko": "오 안돼! 정답은: "
+    },
+    goodbyeMessages: {
+        "en": "Thanks for playing! You scored: ",
+        "es": "¡Gracias por jugar! Has obtenido: ",
+        "ca": "Gràcies per jugar! Has obtingut: ",
+        "de": "Danke fürs Spielen! Du hast erzielt: ",
+        "fr": "Merci d'avoir joué! Vous avez marqué : ",
+        "it": "Grazie per aver giocato! Hai ottenuto: ",
+        "pt": "Obrigado por jogar! Você marcou: ",
+        "zh": "感谢您的参与！您得分：",
+        "ja": "遊んでくれてありがとう！あなたのスコア：",
+        "ko": "게임에 참여해 주셔서 감사합니다! 당신의 점수는: "
+    },
+    pointsInDiffLanguages: {
+        "en": " points.",
+        "es": " puntos.",
+        "ca": " punts.",
+        "de": " Punkte.",
+        "fr": " points.",
+        "it": " punti.",
+        "pt": " pontos.",
+        "zh": " 分.",
+        "ja": " 点.",
+        "ko": " 점."
+    },
+    restartButton: {
+        "en": "Restart",
+        "es": "Reiniciar",
+        "ca": "Reiniciar",
+        "de": "Neustart",
+        "fr": "Redémarrer",
+        "it": "Riavvia",
+        "pt": "Reiniciar",
+        "zh": "重新开始",
+        "ja": "再開",
+        "ko": "다시 시작"
     }
 };
 
