@@ -8,7 +8,7 @@ A program to help you with mental calculations
 
 This project is an application to help everyone practice mental calculations. It features modes to train and play as well as different features. Plus, it is totally free and open-source.
 
-Note that there's a version of this README (Instructions) file in each of the languages in which the game is available. Please, refer to you prefered language [here](/READMEs/).
+Note that there's a version of this README (Instructions) file in each of the languages in which the game is available. Please, refer to you prefered language [here](/READMEs/). *
 
 * [English](/READMEs/ENGLISH.md)
 * [Español](/READMEs/SPANISH.md)
@@ -158,3 +158,6 @@ License
 -------
 
 This project is licensed under the [MIT License](https://github.com/joanalnu/tdm/blob/main/LICENSE.md).
+
+
+<font size="1">* *Note that all translations for languages other than English, Spanish, Catalan, and German where generated automatically and may have errors. The owner does not guarantee the accuracy of the translations and has any responsibity for them.* </font>  </body>
