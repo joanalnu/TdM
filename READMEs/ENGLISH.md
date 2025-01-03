@@ -145,3 +145,5 @@ License
 -------
 
 This project is licensed under the [MIT License](https://github.com/joanalnu/tdm/blob/main/LICENSE.md).
+
+<font size="1">* *Note that all translations for languages other than English, Spanish, Catalan, and German where generated automatically and may have errors. The owner does not guarantee the accuracy of the translations and has any responsibity for them.* </font>  </body>

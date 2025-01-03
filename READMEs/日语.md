@@ -145,3 +145,5 @@ git push origin your-branch-name
 -------
 
 このプロジェクトは、[MITライセンス](https://github.com/joanalnu/tdm/blob/main/LICENSE.md) の下でライセンスされています。
+
+<font size="1">* *注: 英語、スペイン語、カタルーニャ語、ドイツ語以外の言語の翻訳は自��生成されたものであり、エラーが含まれている可能性があります。所有者は翻訳の正確性を保証せず、責任を負いません。* </font>
