@@ -145,3 +145,5 @@ Lizenz
 -------
 
 Dieses Projekt ist unter der [MIT-Lizenz](https://github.com/joanalnu/tdm/blob/main/LICENSE.md) lizenziert.
+
+<font size="1">* *Hinweis: Alle Übersetzungen für Sprachen außer Englisch, Spanisch, Katalanisch und Deutsch wurden automatisch erstellt und können Fehler enthalten. Der Besitzer garantiert nicht die Genauigkeit der Übersetzungen und übernimmt keine Verantwortung dafür.* </font>

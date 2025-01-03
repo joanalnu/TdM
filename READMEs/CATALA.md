@@ -144,4 +144,6 @@ Nota: Abans d'afegir una nova incidència, assegura't de comprovar si ja existei
 Llicència
 -------
 
-Aquest projecte est
+Aquest projecte està sota la [llicència MIT](https://github.com/joanalnu/tdm/blob/main/LICENSE.md)
+
+<font size="1">* *Nota que totes les traduccions per a idiomes diferents de l'anglès, castellà, català i alemany van ser generades automàticament i poden contenir errors. El propietari no garanteix la precisió de les traduccions i no té cap responsabilitat per elles.* </font>

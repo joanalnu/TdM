@@ -8,7 +8,7 @@ A program to help you with mental calculations
 
 This project is an application to help everyone practice mental calculations. It features modes to train and play as well as different features. Plus, it is totally free and open-source.
 
-Note that there's a version of this README (Instructions) file in each of the languages in which the game is available. Please, refer to you prefered language [here](/READMEs/).
+Note that there's a version of this README (Instructions) file in each of the languages in which the game is available. Please, refer to you prefered language [here](/READMEs/). *
 
 * [English](/READMEs/ENGLISH.md)
 * [Español](/READMEs/SPANISH.md)
@@ -17,9 +17,24 @@ Note that there's a version of this README (Instructions) file in each of the la
 * [Français](/READMEs/FRANCAIS.md)
 * [Italian](/READMEs/ITALIAN.md)
 * [Português](/READMEs/PORTUGUES.md)
-* [中文](/READMEs/中文.md)
-* [日语](/READMEs/日语.md)
-* [한국어](/READMEs/한국어.md)
+* [中文](/READMEs/CHINESE.md)
+* [日语](/READMEs/JAPANESE.md)
+* [한국어](/READMEs/KOREAN.md)
+* [عربي](/READMEs/ARABIC.md)
+* [русский](/READMEs/PYCCKNN.md)
+* [हिन्दी](/READMEs/HINDI.md)
+* [বাংলা](/READMEs/BENGALI.md)
+* [Türkçe](/READMEs/TURKCE.md)
+* [Tiếng Việt](/READMEs/VIETNAMESE.md)
+* [ไทย](/READMEs/THAI.md)
+* [فارسی](READMEs/PERSIAN.md)
+* [Melayu](/READMEs/MELAYU.md)
+* [Filipino](/READMEs/FILIPINO.md)
+* [Kiswahili](/READMEs/KISWAHILI.md)
+* [Polski](/READMEs/POLSKI.md)
+* [Українська](/READMEs/UKRAINIAN.md)
+
+
 
 Table of Contents
 -----------------
@@ -158,3 +173,6 @@ License
 -------
 
 This project is licensed under the [MIT License](https://github.com/joanalnu/tdm/blob/main/LICENSE.md).
+
+
+<font size="1">* *Note that all translations for languages other than English, Spanish, Catalan, and German where generated automatically and may have errors. The owner does not guarantee the accuracy of the translations and has any responsibity for them.* </font>  </body>
