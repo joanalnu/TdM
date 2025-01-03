@@ -17,9 +17,10 @@ Note that there's a version of this README (Instructions) file in each of the la
 * [Français](/READMEs/FRANCAIS.md)
 * [Italian](/READMEs/ITALIAN.md)
 * [Português](/READMEs/PORTUGUES.md)
-* [中文](/READMEs/中文.md)
-* [日语](/READMEs/日语.md)
-* [한국어](/READMEs/한국어.md)
+* [中文](/READMEs/chinese.md)
+* [日语](/READMEs/japanese.md)
+* [한국어](/READMEs/korean.md)
+
 
 Table of Contents
 -----------------
